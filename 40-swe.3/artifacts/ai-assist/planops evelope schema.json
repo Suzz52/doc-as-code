@@ -1,0 +1,118 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://qorix.com/schemas/operation-plan.schema.json",
+  "title": "OperationPlan",
+  "description": "Schema for CRUD operation plans targeting apply_operation() method in Qorix platform. (c) 2026 Qorix",
+  "type": "object",
+  "required": ["summary", "ops", "warnings"],
+  "properties": {
+    "summary": {
+      "type": "string",
+      "description": "High-level description of the entire operation plan and its purpose",
+      "minLength": 1,
+      "maxLength": 500,
+      "examples": [
+        "Comprehensive CRUD operation plan for SwcDesign and SignalsComStack models",
+        "Batch update operation for vehicle network configuration"
+      ]
+    },
+    "ops": {
+      "type": "array",
+      "description": "Ordered array of operations to be executed sequentially. Each operation maps to apply_operation(yaml_in, op_json) parameters.",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/Operation"
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "description": "Array of warning messages about the operation plan execution, validation rules, or constraints",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 500
+      },
+      "examples": [
+        [
+          "CREATE operations skip validation to allow partial initialization",
+          "UPDATE operations require full validation and block on errors",
+          "Operations must be executed sequentially for state consistency"
+        ]
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "Operation": {
+      "type": "object",
+      "description": "Single CRUD operation with all required parameters for apply_operation() method",
+      "required": ["op_name", "description", "yaml_in", "op_json"],
+      "properties": {
+        "op_name": {
+          "type": "string",
+          "description": "Unique identifier for the operation using snake_case naming convention",
+          "pattern": "^[a-z][a-z0-9_]*[a-z0-9]$",
+          "minLength": 3,
+          "maxLength": 100,
+          "examples": [
+            "create_swc_field",
+            "update_signal",
+            "delete_bus",
+            "read_application"
+          ]
+        },
+        "description": {
+          "type": "string",
+          "description": "Human-readable explanation of what this operation does and its expected effect",
+          "minLength": 10,
+          "maxLength": 300,
+          "examples": [
+            "Create a new field entity in SwcDesign component",
+            "Update signal properties like length or byte order",
+            "Delete a bus entity from SignalsComStack network"
+          ]
+        },
+        "yaml_in": {
+          "type": "string",
+          "description": "YAML-formatted input containing the domain model state (SwcDesign or SignalsComStack). Maps to first parameter of apply_operation(yaml_in, op_json).",
+          "minLength": 10,
+          "pattern": "^(swc_design:|signals_comstack:)",
+          "examples": [
+            "swc_design:\n  name: \"ExampleComponent\"\n  version: \"1.0.0\"\n  application: []\n  field: []",
+            "signals_comstack:\n  name: \"VehicleNetwork\"\n  version: \"1.0.0\"\n  buses: []\n  signals: []\n  ipdus: []"
+          ]
+        },
+        "op_json": {
+          "type": "string",
+          "description": "JSON-formatted operation specification conforming to UiOpV2 enum structure. Maps to second parameter of apply_operation(yaml_in, op_json). Must be valid JSON containing one of: Create, Update, Delete, or Read operation.",
+          "minLength": 10,
+          "contentMediaType": "application/json",
+          "examples": [
+            "{\"Create\": {\"entity_type\": \"Field\", \"parent_id\": null, \"data\": {\"name\": \"newField\", \"type\": \"uint32\"}}}",
+            "{\"Update\": {\"entity_type\": \"Field\", \"id\": \"field-uuid-001\", \"updates\": {\"type\": \"uint32\"}}}",
+            "{\"Delete\": {\"entity_type\": \"Field\", \"id\": \"field-uuid-999\"}}",
+            "{\"Read\": {\"entity_type\": \"Field\", \"id\": \"field-uuid-read-001\"}}"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "examples": [
+    {
+      "summary": "Basic field creation operation plan",
+      "ops": [
+        {
+          "op_name": "create_swc_field",
+          "description": "Create a new field entity in SwcDesign component",
+          "yaml_in": "swc_design:\n  name: \"ExampleComponent\"\n  version: \"1.0.0\"\n  application: []\n  field: []",
+          "op_json": "{\"Create\": {\"entity_type\": \"Field\", \"parent_id\": null, \"data\": {\"name\": \"newField\", \"type\": \"uint32\", \"init_value\": \"0\"}}}"
+        }
+      ],
+      "warnings": [
+        "CREATE operations skip validation to allow partial initialization",
+        "Each operation must be executed with result YAML as input to next"
+      ]
+    }
+  ]
+}

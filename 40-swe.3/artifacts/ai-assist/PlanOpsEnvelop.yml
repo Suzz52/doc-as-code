@@ -1,0 +1,554 @@
+# OperationPlan Envelope Structure
+# (c) 2026 Qorix
+# Each operation is a complete object with name, description, yaml_in, and op_json
+
+summary: "Comprehensive CRUD operation plan for SwcDesign and SignalsComStack models"
+
+ops:
+  # ============================================
+  # SwcDesign CREATE Operations
+  # ============================================
+  
+  - op_name: "create_swc_field"
+    description: "Create a new field entity in SwcDesign component"
+    yaml_in: |
+      swc_design:
+        name: "ExampleComponent"
+        version: "1.0.0"
+        application: []
+        field: []
+    op_json: |
+      {
+        "Create": {
+          "entity_type": "Field",
+          "parent_id": null,
+          "data": {
+            "name": "newField",
+            "type": "uint32",
+            "init_value": "0"
+          }
+        }
+      }
+
+  - op_name: "create_swc_application"
+    description: "Create a new application entity in SwcDesign component"
+    yaml_in: |
+      swc_design:
+        name: "ExampleComponent"
+        version: "1.0.0"
+        application: []
+        field: []
+    op_json: |
+      {
+        "Create": {
+          "entity_type": "Application",
+          "parent_id": null,
+          "data": {
+            "name": "MainApplication",
+            "runnable": []
+          }
+        }
+      }
+
+  - op_name: "create_swc_runnable"
+    description: "Create a new runnable entity within an application"
+    yaml_in: |
+      swc_design:
+        name: "ExampleComponent"
+        version: "1.0.0"
+        application:
+          - id: "app-uuid-001"
+            name: "MainApplication"
+            runnable: []
+        field: []
+    op_json: |
+      {
+        "Create": {
+          "entity_type": "Runnable",
+          "parent_id": "app-uuid-001",
+          "data": {
+            "name": "PeriodicRunnable",
+            "period": "10ms"
+          }
+        }
+      }
+
+  # ============================================
+  # SwcDesign UPDATE Operations
+  # ============================================
+
+  - op_name: "update_swc_field"
+    description: "Update an existing field's properties in SwcDesign"
+    yaml_in: |
+      swc_design:
+        name: "ExampleComponent"
+        version: "1.0.0"
+        application: []
+        field:
+          - id: "field-uuid-001"
+            name: "existingField"
+            type: "uint16"
+            init_value: "0"
+    op_json: |
+      {
+        "Update": {
+          "entity_type": "Field",
+          "id": "field-uuid-001",
+          "updates": {
+            "type": "uint32",
+            "init_value": "100"
+          }
+        }
+      }
+
+  - op_name: "update_swc_application"
+    description: "Update an existing application's name or properties"
+    yaml_in: |
+      swc_design:
+        name: "ExampleComponent"
+        version: "1.0.0"
+        application:
+          - id: "app-uuid-001"
+            name: "OldAppName"
+            runnable: []
+        field: []
+    op_json: |
+      {
+        "Update": {
+          "entity_type": "Application",
+          "id": "app-uuid-001",
+          "updates": {
+            "name": "UpdatedAppName"
+          }
+        }
+      }
+
+  - op_name: "update_swc_runnable"
+    description: "Update runnable properties like period or timing"
+    yaml_in: |
+      swc_design:
+        name: "ExampleComponent"
+        version: "1.0.0"
+        application:
+          - id: "app-uuid-001"
+            name: "MainApplication"
+            runnable:
+              - id: "runnable-uuid-001"
+                name: "PeriodicRunnable"
+                period: "10ms"
+        field: []
+    op_json: |
+      {
+        "Update": {
+          "entity_type": "Runnable",
+          "id": "runnable-uuid-001",
+          "updates": {
+            "period": "20ms"
+          }
+        }
+      }
+
+  # ============================================
+  # SwcDesign DELETE Operations
+  # ============================================
+
+  - op_name: "delete_swc_field"
+    description: "Delete a field entity from SwcDesign component"
+    yaml_in: |
+      swc_design:
+        name: "ExampleComponent"
+        version: "1.0.0"
+        application: []
+        field:
+          - id: "field-uuid-999"
+            name: "fieldToDelete"
+            type: "uint8"
+            init_value: "0"
+    op_json: |
+      {
+        "Delete": {
+          "entity_type": "Field",
+          "id": "field-uuid-999"
+        }
+      }
+
+  - op_name: "delete_swc_application"
+    description: "Delete an application entity from SwcDesign component"
+    yaml_in: |
+      swc_design:
+        name: "ExampleComponent"
+        version: "1.0.0"
+        application:
+          - id: "app-uuid-999"
+            name: "AppToDelete"
+            runnable: []
+        field: []
+    op_json: |
+      {
+        "Delete": {
+          "entity_type": "Application",
+          "id": "app-uuid-999"
+        }
+      }
+
+  - op_name: "delete_swc_runnable"
+    description: "Delete a runnable entity from an application"
+    yaml_in: |
+      swc_design:
+        name: "ExampleComponent"
+        version: "1.0.0"
+        application:
+          - id: "app-uuid-001"
+            name: "MainApplication"
+            runnable:
+              - id: "runnable-uuid-999"
+                name: "ObsoleteRunnable"
+                period: "5ms"
+        field: []
+    op_json: |
+      {
+        "Delete": {
+          "entity_type": "Runnable",
+          "id": "runnable-uuid-999"
+        }
+      }
+
+  # ============================================
+  # SwcDesign READ Operations
+  # ============================================
+
+  - op_name: "read_swc_field"
+    description: "Read and retrieve a specific field entity details"
+    yaml_in: |
+      swc_design:
+        name: "ExampleComponent"
+        version: "1.0.0"
+        application: []
+        field:
+          - id: "field-uuid-read-001"
+            name: "readableField"
+            type: "uint32"
+            init_value: "42"
+    op_json: |
+      {
+        "Read": {
+          "entity_type": "Field",
+          "id": "field-uuid-read-001"
+        }
+      }
+
+  - op_name: "read_swc_application"
+    description: "Read and retrieve application entity with all runnables"
+    yaml_in: |
+      swc_design:
+        name: "ExampleComponent"
+        version: "1.0.0"
+        application:
+          - id: "app-uuid-read-001"
+            name: "ReadableApp"
+            runnable:
+              - id: "runnable-uuid-001"
+                name: "MainRunnable"
+                period: "10ms"
+        field: []
+    op_json: |
+      {
+        "Read": {
+          "entity_type": "Application",
+          "id": "app-uuid-read-001"
+        }
+      }
+
+  # ============================================
+  # SignalsComStack CREATE Operations
+  # ============================================
+
+  - op_name: "create_signal"
+    description: "Create a new signal entity in SignalsComStack network"
+    yaml_in: |
+      signals_comstack:
+        name: "VehicleNetwork"
+        version: "1.0.0"
+        buses: []
+        signals: []
+        ipdus: []
+    op_json: |
+      {
+        "Create": {
+          "entity_type": "Signal",
+          "parent_id": null,
+          "data": {
+            "name": "VehicleSpeed",
+            "length": 16,
+            "byte_order": "little_endian"
+          }
+        }
+      }
+
+  - op_name: "create_bus"
+    description: "Create a new bus entity in SignalsComStack network"
+    yaml_in: |
+      signals_comstack:
+        name: "VehicleNetwork"
+        version: "1.0.0"
+        buses: []
+        signals: []
+        ipdus: []
+    op_json: |
+      {
+        "Create": {
+          "entity_type": "Bus",
+          "parent_id": null,
+          "data": {
+            "name": "CAN_HS",
+            "baudrate": 500000,
+            "protocol": "CAN"
+          }
+        }
+      }
+
+  - op_name: "create_ipdu"
+    description: "Create a new I-PDU entity in SignalsComStack network"
+    yaml_in: |
+      signals_comstack:
+        name: "VehicleNetwork"
+        version: "1.0.0"
+        buses: []
+        signals: []
+        ipdus: []
+    op_json: |
+      {
+        "Create": {
+          "entity_type": "Ipdu",
+          "parent_id": null,
+          "data": {
+            "name": "VehicleStatusPDU",
+            "length": 64,
+            "direction": "tx"
+          }
+        }
+      }
+
+  # ============================================
+  # SignalsComStack UPDATE Operations
+  # ============================================
+
+  - op_name: "update_signal"
+    description: "Update signal properties like length or byte order"
+    yaml_in: |
+      signals_comstack:
+        name: "VehicleNetwork"
+        version: "1.0.0"
+        buses: []
+        signals:
+          - id: "signal-uuid-001"
+            name: "VehicleSpeed"
+            length: 16
+            byte_order: "little_endian"
+        ipdus: []
+    op_json: |
+      {
+        "Update": {
+          "entity_type": "Signal",
+          "id": "signal-uuid-001",
+          "updates": {
+            "length": 32,
+            "byte_order": "big_endian"
+          }
+        }
+      }
+
+  - op_name: "update_bus"
+    description: "Update bus properties like baudrate or protocol"
+    yaml_in: |
+      signals_comstack:
+        name: "VehicleNetwork"
+        version: "1.0.0"
+        buses:
+          - id: "bus-uuid-001"
+            name: "CAN_HS"
+            baudrate: 500000
+            protocol: "CAN"
+        signals: []
+        ipdus: []
+    op_json: |
+      {
+        "Update": {
+          "entity_type": "Bus",
+          "id": "bus-uuid-001",
+          "updates": {
+            "baudrate": 1000000
+          }
+        }
+      }
+
+  - op_name: "update_ipdu"
+    description: "Update I-PDU properties like length or direction"
+    yaml_in: |
+      signals_comstack:
+        name: "VehicleNetwork"
+        version: "1.0.0"
+        buses: []
+        signals: []
+        ipdus:
+          - id: "ipdu-uuid-001"
+            name: "VehicleStatusPDU"
+            length: 64
+            direction: "tx"
+    op_json: |
+      {
+        "Update": {
+          "entity_type": "Ipdu",
+          "id": "ipdu-uuid-001",
+          "updates": {
+            "length": 128,
+            "direction": "rx"
+          }
+        }
+      }
+
+  # ============================================
+  # SignalsComStack DELETE Operations
+  # ============================================
+
+  - op_name: "delete_signal"
+    description: "Delete a signal entity from SignalsComStack network"
+    yaml_in: |
+      signals_comstack:
+        name: "VehicleNetwork"
+        version: "1.0.0"
+        buses: []
+        signals:
+          - id: "signal-uuid-999"
+            name: "ObsoleteSignal"
+            length: 8
+            byte_order: "little_endian"
+        ipdus: []
+    op_json: |
+      {
+        "Delete": {
+          "entity_type": "Signal",
+          "id": "signal-uuid-999"
+        }
+      }
+
+  - op_name: "delete_bus"
+    description: "Delete a bus entity from SignalsComStack network"
+    yaml_in: |
+      signals_comstack:
+        name: "VehicleNetwork"
+        version: "1.0.0"
+        buses:
+          - id: "bus-uuid-999"
+            name: "ObsoleteBus"
+            baudrate: 250000
+            protocol: "CAN"
+        signals: []
+        ipdus: []
+    op_json: |
+      {
+        "Delete": {
+          "entity_type": "Bus",
+          "id": "bus-uuid-999"
+        }
+      }
+
+  - op_name: "delete_ipdu"
+    description: "Delete an I-PDU entity from SignalsComStack network"
+    yaml_in: |
+      signals_comstack:
+        name: "VehicleNetwork"
+        version: "1.0.0"
+        buses: []
+        signals: []
+        ipdus:
+          - id: "ipdu-uuid-999"
+            name: "ObsoletePDU"
+            length: 32
+            direction: "tx"
+    op_json: |
+      {
+        "Delete": {
+          "entity_type": "Ipdu",
+          "id": "ipdu-uuid-999"
+        }
+      }
+
+  # ============================================
+  # SignalsComStack READ Operations
+  # ============================================
+
+  - op_name: "read_signal"
+    description: "Read and retrieve signal entity details"
+    yaml_in: |
+      signals_comstack:
+        name: "VehicleNetwork"
+        version: "1.0.0"
+        buses: []
+        signals:
+          - id: "signal-uuid-read-001"
+            name: "ReadableSignal"
+            length: 16
+            byte_order: "little_endian"
+        ipdus: []
+    op_json: |
+      {
+        "Read": {
+          "entity_type": "Signal",
+          "id": "signal-uuid-read-001"
+        }
+      }
+
+  - op_name: "read_bus"
+    description: "Read and retrieve bus entity details"
+    yaml_in: |
+      signals_comstack:
+        name: "VehicleNetwork"
+        version: "1.0.0"
+        buses:
+          - id: "bus-uuid-read-001"
+            name: "ReadableBus"
+            baudrate: 500000
+            protocol: "CAN"
+        signals: []
+        ipdus: []
+    op_json: |
+      {
+        "Read": {
+          "entity_type": "Bus",
+          "id": "bus-uuid-read-001"
+        }
+      }
+
+  - op_name: "read_ipdu"
+    description: "Read and retrieve I-PDU entity details"
+    yaml_in: |
+      signals_comstack:
+        name: "VehicleNetwork"
+        version: "1.0.0"
+        buses: []
+        signals: []
+        ipdus:
+          - id: "ipdu-uuid-read-001"
+            name: "ReadablePDU"
+            length: 64
+            direction: "tx"
+    op_json: |
+      {
+        "Read": {
+          "entity_type": "Ipdu",
+          "id": "ipdu-uuid-read-001"
+        }
+      }
+
+warnings:
+  - "Each operation object contains: op_name, description, yaml_in, op_json"
+  - "op_name uniquely identifies each operation in the plan"
+  - "description explains the purpose and effect of the operation"
+  - "yaml_in and op_json map directly to apply_operation() parameters"
+  - "CREATE operations skip validation to allow partial initialization"
+  - "UPDATE operations require full validation and block on errors"
+  - "DELETE operations serialize YAML on successful deletion"
+  - "READ operations return entity info without modifying YAML"
+  - "Operations must be executed sequentially for state consistency"
+  - "apply_operation() returns UiResp as JSON string for all operations"

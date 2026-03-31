@@ -1,0 +1,141 @@
+# Sample PlanOps Envelope Payload
+# Demonstrates a complete operation plan for creating and updating SwcDesign entities
+# (c) 2026 Qorix Developer Platform
+
+summary: "Create SwcDesign component with application and field entities, then update field properties"
+
+ops:
+  - op_name: "create_swc_component"
+    description: "Initialize a new SwcDesign component with basic metadata"
+    yaml_in: |
+      swc_design:
+        name: "VehicleSpeedController"
+        version: "1.0.0"
+        application: []
+        field: []
+    op_json: |
+      {
+        "Create": {
+          "entity_type": "SwcDesign",
+          "parent_id": null,
+          "data": {
+            "name": "VehicleSpeedController",
+            "version": "1.0.0",
+            "description": "Main controller for vehicle speed management"
+          }
+        }
+      }
+
+  - op_name: "create_application_entity"
+    description: "Create an application entity within the SwcDesign component"
+    yaml_in: |
+      swc_design:
+        name: "VehicleSpeedController"
+        version: "1.0.0"
+        application: []
+        field: []
+    op_json: |
+      {
+        "Create": {
+          "entity_type": "Application",
+          "parent_id": "swc-design-uuid-001",
+          "data": {
+            "name": "SpeedMonitorApp",
+            "type": "RealTimeApp",
+            "priority": 10
+          }
+        }
+      }
+
+  - op_name: "create_field_vehicle_speed"
+    description: "Create a field entity for storing current vehicle speed value"
+    yaml_in: |
+      swc_design:
+        name: "VehicleSpeedController"
+        version: "1.0.0"
+        application:
+          - name: "SpeedMonitorApp"
+            type: "RealTimeApp"
+            priority: 10
+        field: []
+    op_json: |
+      {
+        "Create": {
+          "entity_type": "Field",
+          "parent_id": "app-uuid-001",
+          "data": {
+            "name": "currentSpeed",
+            "type": "uint32",
+            "init_value": "0",
+            "unit": "km/h"
+          }
+        }
+      }
+
+  - op_name: "update_field_speed_limit"
+    description: "Update the field to add maximum speed constraint"
+    yaml_in: |
+      swc_design:
+        name: "VehicleSpeedController"
+        version: "1.0.0"
+        application:
+          - name: "SpeedMonitorApp"
+            type: "RealTimeApp"
+            priority: 10
+        field:
+          - name: "currentSpeed"
+            type: "uint32"
+            init_value: "0"
+            unit: "km/h"
+    op_json: |
+      {
+        "Update": {
+          "entity_type": "Field",
+          "id": "field-uuid-001",
+          "updates": {
+            "max_value": "250",
+            "description": "Current vehicle speed with 250 km/h limit"
+          }
+        }
+      }
+
+  - op_name: "create_field_target_speed"
+    description: "Create another field for target/desired speed"
+    yaml_in: |
+      swc_design:
+        name: "VehicleSpeedController"
+        version: "1.0.0"
+        application:
+          - name: "SpeedMonitorApp"
+            type: "RealTimeApp"
+            priority: 10
+        field:
+          - name: "currentSpeed"
+            type: "uint32"
+            init_value: "0"
+            unit: "km/h"
+            max_value: "250"
+            description: "Current vehicle speed with 250 km/h limit"
+    op_json: |
+      {
+        "Create": {
+          "entity_type": "Field",
+          "parent_id": "app-uuid-001",
+          "data": {
+            "name": "targetSpeed",
+            "type": "uint32",
+            "init_value": "0",
+            "unit": "km/h",
+            "max_value": "250",
+            "description": "Desired target speed for cruise control"
+          }
+        }
+      }
+
+warnings:
+  - "CREATE operations skip validation to allow partial initialization"
+  - "UPDATE operations require full validation and block on errors"
+  - "Operations must be executed sequentially for state consistency"
+  - "Each operation's output YAML becomes input for the next operation"
+  - "Validation errors trigger automatic plan correction via LLM"
+  - "User approval required before executing each operation"
