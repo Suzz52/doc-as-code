@@ -1179,3 +1179,35 @@ OperationPlan acceptance and import events (QDX-SWE-052).
 *Authoritative version is HEAD of* ``main``.
 *Architectural decisions (ADR) require Chief Architect approval.
 All changes require a PR with minimum two approvals from CODEOWNERS.*
+
+15. Architecture Specifications (SWE.2)
+=======================================
+
+.. spec:: IDE command bus orchestration component
+   :id: QDX-SWA-SP-001
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-029
+
+   The IDE command bus specification defines how designer actions are translated
+   into typed domain operations and synchronized with YAML persistence to satisfy
+   designer-to-YAML synchronization requirements.
+
+.. spec:: Rust core tri-target build specification
+   :id: QDX-SWA-SP-002
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-046
+
+   The Rust architecture specifies a single crate core compiled to service,
+   WASM, and CLI targets so validation and behavior remain equivalent across
+   interactive IDE and CI execution paths.
+
+.. spec:: ARXML gateway isolation specification
+   :id: QDX-SWA-SP-003
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-039
+
+   The architecture enforces ARXML processing through the gateway boundary,
+   preventing direct ARTOP/EMF coupling from domain-core modules.

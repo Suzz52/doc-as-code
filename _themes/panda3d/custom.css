@@ -1,0 +1,12 @@
+/* Lightweight Panda3D-inspired accents */
+body {
+  --panda3d-primary: #1c6ea4;
+}
+
+a {
+  color: var(--panda3d-primary);
+}
+
+a:hover {
+  color: #154f76;
+}
