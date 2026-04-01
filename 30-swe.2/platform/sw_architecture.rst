@@ -1180,34 +1180,813 @@ OperationPlan acceptance and import events (QDX-SWE-052).
 *Architectural decisions (ADR) require Chief Architect approval.
 All changes require a PR with minimum two approvals from CODEOWNERS.*
 
-15. Architecture Specifications (SWE.2)
+10. Architecture Specifications (SWE.2)
 =======================================
 
-.. spec:: IDE command bus orchestration component
+.. spec:: Multi-stack workspace initialisation architecture
    :id: QDX-SWA-SP-001
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-001
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-001 (Multi-stack workspace initialisation).
+
+.. spec:: Per-stack project scaffolding architecture
+   :id: QDX-SWA-SP-002
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-002
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-002 (Per-stack project scaffolding).
+
+.. spec:: Source/output directory separation architecture
+   :id: QDX-SWA-SP-003
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-003
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-003 (Source/output directory separation).
+
+.. spec:: Version-control-friendly YAML persistence architecture
+   :id: QDX-SWA-SP-004
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-004
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-004 (Version-control-friendly YAML persistence).
+
+.. spec:: Atomic save with integrity protection architecture
+   :id: QDX-SWA-SP-005
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-005
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-005 (Atomic save with integrity protection).
+
+.. spec:: YAML editor with schema-based completion architecture
+   :id: QDX-SWA-SP-006
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-006
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-006 (YAML editor with schema-based completion).
+
+.. spec:: Language server protocol integration architecture
+   :id: QDX-SWA-SP-007
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-007
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-007 (Language server protocol integration).
+
+.. spec:: Localised atomic model mutations architecture
+   :id: QDX-SWA-SP-008
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-008
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-008 (Localised atomic model mutations).
+
+.. spec:: C1 — SWC and interface designer architecture
+   :id: QDX-SWA-SP-009
+   :status: Draft
+   :domain: classic
+   :implements: QDX-SWE-009
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-009 (C1 — SWC and interface designer).
+
+.. spec:: C1 — SWC runnable definition architecture
+   :id: QDX-SWA-SP-010
+   :status: Draft
+   :domain: classic
+   :implements: QDX-SWE-010
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-010 (C1 — SWC runnable definition).
+
+.. spec:: C2 — Signals and ComStack designer architecture
+   :id: QDX-SWA-SP-011
+   :status: Draft
+   :domain: classic
+   :implements: QDX-SWE-011
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-011 (C2 — Signals and ComStack designer).
+
+.. spec:: C3 — ECU and BSW designer architecture
+   :id: QDX-SWA-SP-012
+   :status: Draft
+   :domain: classic
+   :implements: QDX-SWE-012
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-012 (C3 — ECU and BSW designer).
+
+.. spec:: C4 — OS and scheduling designer architecture
+   :id: QDX-SWA-SP-013
+   :status: Draft
+   :domain: classic
+   :implements: QDX-SWE-013
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-013 (C4 — OS and scheduling designer).
+
+.. spec:: C5 — Memory and NvM designer architecture
+   :id: QDX-SWA-SP-014
+   :status: Draft
+   :domain: classic
+   :implements: QDX-SWE-014
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-014 (C5 — Memory and NvM designer).
+
+.. spec:: C6 — RTE and mapping designer architecture
+   :id: QDX-SWA-SP-015
+   :status: Draft
+   :domain: classic
+   :implements: QDX-SWE-015
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-015 (C6 — RTE and mapping designer).
+
+.. spec:: Unmapped element detection in C6 architecture
+   :id: QDX-SWA-SP-016
+   :status: Draft
+   :domain: classic
+   :implements: QDX-SWE-016
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-016 (Unmapped element detection in C6).
+
+.. spec:: A1 — Application and service designer architecture
+   :id: QDX-SWA-SP-017
+   :status: Draft
+   :domain: adaptive
+   :implements: QDX-SWE-017
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-017 (A1 — Application and service designer).
+
+.. spec:: A1 — Service cross-reference tracking architecture
+   :id: QDX-SWA-SP-018
+   :status: Draft
+   :domain: adaptive
+   :implements: QDX-SWE-018
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-018 (A1 — Service cross-reference tracking).
+
+.. spec:: A2 — Communication and service instance designer architecture
+   :id: QDX-SWA-SP-019
+   :status: Draft
+   :domain: adaptive
+   :implements: QDX-SWE-019
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-019 (A2 — Communication and service instance designer).
+
+.. spec:: A2 — Service binding completeness validation architecture
+   :id: QDX-SWA-SP-020
+   :status: Draft
+   :domain: adaptive
+   :implements: QDX-SWE-020
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-020 (A2 — Service binding completeness validation).
+
+.. spec:: A3 — Machine design designer architecture
+   :id: QDX-SWA-SP-021
+   :status: Draft
+   :domain: adaptive
+   :implements: QDX-SWE-021
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-021 (A3 — Machine design designer).
+
+.. spec:: A3 — Disabled core reference detection architecture
+   :id: QDX-SWA-SP-022
+   :status: Draft
+   :domain: adaptive
+   :implements: QDX-SWE-022
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-022 (A3 — Disabled core reference detection).
+
+.. spec:: A4 — Platform services designer architecture
+   :id: QDX-SWA-SP-023
+   :status: Draft
+   :domain: adaptive
+   :implements: QDX-SWE-023
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-023 (A4 — Platform services designer).
+
+.. spec:: A5 — Execution management designer architecture
+   :id: QDX-SWA-SP-024
+   :status: Draft
+   :domain: adaptive
+   :implements: QDX-SWE-024
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-024 (A5 — Execution management designer).
+
+.. spec:: A5 — Scheduling conflict detection architecture
+   :id: QDX-SWA-SP-025
+   :status: Draft
+   :domain: adaptive
+   :implements: QDX-SWE-025
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-025 (A5 — Scheduling conflict detection).
+
+.. spec:: A6 — Deployment designer architecture
+   :id: QDX-SWA-SP-026
+   :status: Draft
+   :domain: adaptive
+   :implements: QDX-SWE-026
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-026 (A6 — Deployment designer).
+
+.. spec:: A6 — Resource constraint validation architecture
+   :id: QDX-SWA-SP-027
+   :status: Draft
+   :domain: adaptive
+   :implements: QDX-SWE-027
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-027 (A6 — Resource constraint validation).
+
+.. spec:: Adaptive cross-designer consistency check architecture
+   :id: QDX-SWA-SP-028
+   :status: Draft
+   :domain: adaptive
+   :implements: QDX-SWE-028
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-028 (Adaptive cross-designer consistency check).
+
+.. spec:: Designer-to-YAML synchronisation architecture
+   :id: QDX-SWA-SP-029
    :status: Draft
    :domain: shared
    :implements: QDX-SWE-029
 
-   The IDE command bus specification defines how designer actions are translated
-   into typed domain operations and synchronized with YAML persistence to satisfy
-   designer-to-YAML synchronization requirements.
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-029 (Designer-to-YAML synchronisation).
 
-.. spec:: Rust core tri-target build specification
-   :id: QDX-SWA-SP-002
+.. spec:: YAML-to-designer synchronisation architecture
+   :id: QDX-SWA-SP-030
    :status: Draft
    :domain: shared
-   :implements: QDX-SWE-046
+   :implements: QDX-SWE-030
 
-   The Rust architecture specifies a single crate core compiled to service,
-   WASM, and CLI targets so validation and behavior remain equivalent across
-   interactive IDE and CI execution paths.
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-030 (YAML-to-designer synchronisation).
 
-.. spec:: ARXML gateway isolation specification
-   :id: QDX-SWA-SP-003
+.. spec:: In-IDE WASM fast validation architecture
+   :id: QDX-SWA-SP-031
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-031
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-031 (In-IDE WASM fast validation).
+
+.. spec:: Deep semantic validation via domain service architecture
+   :id: QDX-SWA-SP-032
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-032
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-032 (Deep semantic validation via domain service).
+
+.. spec:: Cross-file reference resolution architecture
+   :id: QDX-SWA-SP-033
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-033
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-033 (Cross-file reference resolution).
+
+.. spec:: Validation-gated publication architecture
+   :id: QDX-SWA-SP-034
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-034
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-034 (Validation-gated publication).
+
+.. spec:: Workspace-level consistency check architecture
+   :id: QDX-SWA-SP-035
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-035
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-035 (Workspace-level consistency check).
+
+.. spec:: Diagnostics panel presentation architecture
+   :id: QDX-SWA-SP-036
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-036
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-036 (Diagnostics panel presentation).
+
+.. spec:: Usable diagnostic message quality architecture
+   :id: QDX-SWA-SP-037
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-037
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-037 (Usable diagnostic message quality).
+
+.. spec:: Deterministic ARXML generation architecture
+   :id: QDX-SWA-SP-038
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-038
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-038 (Deterministic ARXML generation).
+
+.. spec:: ARXML export via ARTOP GraphQL gateway architecture
+   :id: QDX-SWA-SP-039
    :status: Draft
    :domain: shared
    :implements: QDX-SWE-039
 
-   The architecture enforces ARXML processing through the gateway boundary,
-   preventing direct ARTOP/EMF coupling from domain-core modules.
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-039 (ARXML export via ARTOP GraphQL gateway).
+
+.. spec:: ARXML import and lossy-conversion reporting architecture
+   :id: QDX-SWA-SP-040
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-040
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-040 (ARXML import and lossy-conversion reporting).
+
+.. spec:: Generation provenance recording architecture
+   :id: QDX-SWA-SP-041
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-041
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-041 (Generation provenance recording).
+
+.. spec:: External artefact compatibility status reporting architecture
+   :id: QDX-SWA-SP-042
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-042
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-042 (External artefact compatibility status reporting).
+
+.. spec:: GraphQL API contract for model access architecture
+   :id: QDX-SWA-SP-043
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-043
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-043 (GraphQL API contract for model access).
+
+.. spec:: Search and navigation API architecture
+   :id: QDX-SWA-SP-044
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-044
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-044 (Search and navigation API).
+
+.. spec:: Headless CLI for CI validation and generation architecture
+   :id: QDX-SWA-SP-045
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-045
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-045 (Headless CLI for CI validation and generation).
+
+.. spec:: Same Rust core for all build targets architecture
+   :id: QDX-SWA-SP-046
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-046
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-046 (Same Rust core for all build targets).
+
+.. spec:: AI-generated OperationPlan — no direct YAML edit architecture
+   :id: QDX-SWA-SP-047
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-047
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-047 (AI-generated OperationPlan — no direct YAML edit).
+
+.. spec:: User acceptance gate for AI suggestions architecture
+   :id: QDX-SWA-SP-048
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-048
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-048 (User acceptance gate for AI suggestions).
+
+.. spec:: Post-acceptance WASM re-validation architecture
+   :id: QDX-SWA-SP-049
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-049
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-049 (Post-acceptance WASM re-validation).
+
+.. spec:: Intent Router — Classic vs Adaptive dispatch architecture
+   :id: QDX-SWA-SP-050
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-050
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-050 (Intent Router — Classic vs Adaptive dispatch).
+
+.. spec:: Configurable AI data transmission control architecture
+   :id: QDX-SWA-SP-051
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-051
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-051 (Configurable AI data transmission control).
+
+.. spec:: Audit log for critical user actions architecture
+   :id: QDX-SWA-SP-052
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-052
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-052 (Audit log for critical user actions).
+
+.. spec:: Access control for privileged operations architecture
+   :id: QDX-SWA-SP-053
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-053
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-053 (Access control for privileged operations).
+
+.. spec:: Workspace open time architecture
+   :id: QDX-SWA-SP-054
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-054
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-054 (Workspace open time).
+
+.. spec:: WASM validation latency architecture
+   :id: QDX-SWA-SP-055
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-055
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-055 (WASM validation latency).
+
+.. spec:: Search response time architecture
+   :id: QDX-SWA-SP-056
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-056
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-056 (Search response time).
+
+.. spec:: ARXML generation completion time architecture
+   :id: QDX-SWA-SP-057
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-057
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-057 (ARXML generation completion time).
+
+.. spec:: Non-blocking UI for long-running operations architecture
+   :id: QDX-SWA-SP-058
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-058
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-058 (Non-blocking UI for long-running operations).
+
+.. spec:: Dual IDE host support — VS Code and Theia architecture
+   :id: QDX-SWA-SP-059
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-059
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-059 (Dual IDE host support — VS Code and Theia).
+
+.. spec:: Offline local authoring and validation architecture
+   :id: QDX-SWA-SP-060
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-060
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-060 (Offline local authoring and validation).
+
+.. spec:: Extension mechanism without core modification architecture
+   :id: QDX-SWA-SP-061
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-061
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-061 (Extension mechanism without core modification).
+
+.. spec:: Backward-compatible project migration architecture
+   :id: QDX-SWA-SP-062
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-062
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-062 (Backward-compatible project migration).
+
+.. spec:: BPCT project structure and MCU selection (BD1) architecture
+   :id: QDX-SWA-SP-063
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-063
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-063 (BPCT project structure and MCU selection (BD1)).
+
+.. spec:: BPCT communication channel configuration (BD2) architecture
+   :id: QDX-SWA-SP-064
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-064
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-064 (BPCT communication channel configuration (BD2)).
+
+.. spec:: BPCT memory map and NvM block configuration (BD3) architecture
+   :id: QDX-SWA-SP-065
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-065
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-065 (BPCT memory map and NvM block configuration (BD3)).
+
+.. spec:: BPCT flash block size constraint validation (BD3) architecture
+   :id: QDX-SWA-SP-066
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-066
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-066 (BPCT flash block size constraint validation (BD3)).
+
+.. spec:: BPCT core parameters and UDS session configuration (BD4) architecture
+   :id: QDX-SWA-SP-067
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-067
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-067 (BPCT core parameters and UDS session configuration (BD4)).
+
+.. spec:: BPCT timing, hardware and watchdog configuration (BD5) architecture
+   :id: QDX-SWA-SP-068
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-068
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-068 (BPCT timing, hardware and watchdog configuration (BD5)).
+
+.. spec:: BPCT watchdog timeout cross-constraint validation (BD5) architecture
+   :id: QDX-SWA-SP-069
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-069
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-069 (BPCT watchdog timeout cross-constraint validation (BD5)).
+
+.. spec:: BPCT cross-designer timing dependency propagation architecture
+   :id: QDX-SWA-SP-070
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-070
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-070 (BPCT cross-designer timing dependency propagation).
+
+.. spec:: BPCT crypto and secure boot configuration (BD6) architecture
+   :id: QDX-SWA-SP-071
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-071
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-071 (BPCT crypto and secure boot configuration (BD6)).
+
+.. spec:: BPCT weak cryptographic algorithm detection (BD6) architecture
+   :id: QDX-SWA-SP-072
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-072
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-072 (BPCT weak cryptographic algorithm detection (BD6)).
+
+.. spec:: BPCT key address placement validation (BD6) architecture
+   :id: QDX-SWA-SP-073
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-073
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-073 (BPCT key address placement validation (BD6)).
+
+.. spec:: BPCT validation rule engine (cross-designer) architecture
+   :id: QDX-SWA-SP-074
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-074
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-074 (BPCT validation rule engine (cross-designer)).
+
+.. spec:: BPCT C header and Makefile generation architecture
+   :id: QDX-SWA-SP-075
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-075
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-075 (BPCT C header and Makefile generation).
+
+.. spec:: BPCT output preview in BD1 designer architecture
+   :id: QDX-SWA-SP-076
+   :status: Draft
+   :domain: bootloader
+   :implements: QDX-SWE-076
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-076 (BPCT output preview in BD1 designer).
+
+.. spec:: AI-Assist availability gated by domain extension architecture
+   :id: QDX-SWA-SP-077
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-077
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-077 (AI-Assist availability gated by domain extension).
+
+.. spec:: AI-Assist context injection per domain architecture
+   :id: QDX-SWA-SP-078
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-078
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-078 (AI-Assist context injection per domain).
+
+.. spec:: AI-Assist OperationPlan scoped to active domain architecture
+   :id: QDX-SWA-SP-079
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-079
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-079 (AI-Assist OperationPlan scoped to active domain).
+
+.. spec:: AI-Assist BPCT domain tools architecture
+   :id: QDX-SWA-SP-080
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-080
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-080 (AI-Assist BPCT domain tools).
+
+.. spec:: LW-BSW project creation and ECU/DEXT import architecture
+   :id: QDX-SWA-SP-081
+   :status: Draft
+   :domain: lw-bsw
+   :implements: QDX-SWE-081
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-081 (LW-BSW project creation and ECU/DEXT import).
+
+.. spec:: LW-BSW module configuration — ten BSW modules architecture
+   :id: QDX-SWA-SP-082
+   :status: Draft
+   :domain: lw-bsw
+   :implements: QDX-SWE-082
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-082 (LW-BSW module configuration — ten BSW modules).
+
+.. spec:: LW-BSW CAN and optional LIN communication configuration architecture
+   :id: QDX-SWA-SP-083
+   :status: Draft
+   :domain: lw-bsw
+   :implements: QDX-SWE-083
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-083 (LW-BSW CAN and optional LIN communication configuration).
+
+.. spec:: LW-BSW resource budget validation architecture
+   :id: QDX-SWA-SP-084
+   :status: Draft
+   :domain: lw-bsw
+   :implements: QDX-SWE-084
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-084 (LW-BSW resource budget validation).
+
+.. spec:: LW-BSW OS scheduling map and race condition analysis architecture
+   :id: QDX-SWA-SP-085
+   :status: Draft
+   :domain: lw-bsw
+   :implements: QDX-SWE-085
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-085 (LW-BSW OS scheduling map and race condition analysis).
+
+.. spec:: LW-BSW Config Report generation architecture
+   :id: QDX-SWA-SP-086
+   :status: Draft
+   :domain: lw-bsw
+   :implements: QDX-SWE-086
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-086 (LW-BSW Config Report generation).
+
+.. spec:: LW-BSW module configuration ``.h`` and ``.c`` generation architecture
+   :id: QDX-SWA-SP-087
+   :status: Draft
+   :domain: lw-bsw
+   :implements: QDX-SWE-087
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-087 (LW-BSW module configuration ``.h`` and ``.c`` generation).
+
+.. spec:: LW-BSW bus-level compatibility check with Classic AUTOSAR architecture
+   :id: QDX-SWA-SP-088
+   :status: Draft
+   :domain: lw-bsw
+   :implements: QDX-SWE-088
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-088 (LW-BSW bus-level compatibility check with Classic AUTOSAR).
+
+.. spec:: LW-BSW AI-Assist Config Insight architecture
+   :id: QDX-SWA-SP-089
+   :status: Draft
+   :domain: lw-bsw
+   :implements: QDX-SWE-089
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-089 (LW-BSW AI-Assist Config Insight).
+
+.. spec:: LW-BSW ICC-2 conformance constraint enforcement architecture
+   :id: QDX-SWA-SP-090
+   :status: Draft
+   :domain: lw-bsw
+   :implements: QDX-SWE-090
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-090 (LW-BSW ICC-2 conformance constraint enforcement).
+
+.. spec:: Project creation wizard — welcome and stack selection architecture
+   :id: QDX-SWA-SP-091
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-091
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-091 (Project creation wizard — welcome and stack selection).
+
+.. spec:: Classic AUTOSAR — platform version selection step architecture
+   :id: QDX-SWA-SP-092
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-092
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-092 (Classic AUTOSAR — platform version selection step).
+
+.. spec:: Classic AUTOSAR — template selection step architecture
+   :id: QDX-SWA-SP-093
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-093
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-093 (Classic AUTOSAR — template selection step).
+
+.. spec:: Classic AUTOSAR — project configuration step architecture
+   :id: QDX-SWA-SP-094
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-094
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-094 (Classic AUTOSAR — project configuration step).
+
+.. spec:: Adaptive AUTOSAR — template selection step architecture
+   :id: QDX-SWA-SP-095
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-095
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-095 (Adaptive AUTOSAR — template selection step).
+
+.. spec:: Adaptive AUTOSAR — project configuration step architecture
+   :id: QDX-SWA-SP-096
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-096
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-096 (Adaptive AUTOSAR — project configuration step).
+
+.. spec:: Bootloader (BPCT) — template selection step architecture
+   :id: QDX-SWA-SP-097
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-097
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-097 (Bootloader (BPCT) — template selection step).
+
+.. spec:: Bootloader (BPCT) — MCU and project configuration step architecture
+   :id: QDX-SWA-SP-098
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-098
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-098 (Bootloader (BPCT) — MCU and project configuration step).
+
+.. spec:: LW-BSW — project configuration step architecture
+   :id: QDX-SWA-SP-099
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-099
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-099 (LW-BSW — project configuration step).
+
+.. spec:: Project creation — review and confirmation step architecture
+   :id: QDX-SWA-SP-100
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-100
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-100 (Project creation — review and confirmation step).
+
+.. spec:: Project creation — step navigation and per-stack sequences architecture
+   :id: QDX-SWA-SP-101
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-101
+
+   Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-101 (Project creation — step navigation and per-stack sequences).

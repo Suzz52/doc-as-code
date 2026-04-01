@@ -47,7 +47,7 @@ needs_extra_links = [
         'option': 'implements',
         'incoming': 'implemented_by',
         'outgoing': 'implements',
-        'copy': False,
+        'copy': True,
         'color': '#1B9E77',
     },
 ]
