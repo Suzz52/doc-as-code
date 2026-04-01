@@ -1,20 +1,18 @@
-Qorix Developer Docs (Focused Scope)
-====================================
+Qorix Platform Documentation
+============================
 
-This Sphinx project intentionally focuses on the following ASPICE-oriented
-content and traceability:
+Welcome to the Qorix software documentation portal.
 
-* Overview
-* SYS.2
-* SWE.1
-* SWE.2
+The structure follows an ASPICE-aligned flow and provides traceability
+from system-level requirements down to software design.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Focused Documentation
+   :caption: Handbook
 
    00-overview/index
    10-sys.2/index
    20-swe.1/index
    30-swe.2/index
+   40-swe.3/index
    traceability/index
