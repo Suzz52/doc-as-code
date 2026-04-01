@@ -12,7 +12,6 @@ exclude_patterns = [
     '_build',
     'Thumbs.db',
     '.DS_Store',
-    '50-testing/**',
     '60-decisions/**',
     '70-ops/**',
     '80-product_direction/**',
