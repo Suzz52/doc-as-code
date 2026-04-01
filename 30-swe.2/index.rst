@@ -1,5 +1,5 @@
-SWE.2
-=====
+Software Architecture
+=====================
 
 .. toctree::
    :maxdepth: 2

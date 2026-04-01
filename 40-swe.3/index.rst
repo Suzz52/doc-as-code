@@ -1,5 +1,5 @@
-SWE.3
-=====
+SW Detailed Design
+==================
 
 .. toctree::
    :maxdepth: 2
