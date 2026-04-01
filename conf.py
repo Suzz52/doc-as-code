@@ -57,7 +57,9 @@ needs_id_regex = r'^[A-Z0-9-]+$'
 html_theme = 'pydata_sphinx_theme'
 html_theme_options = {
     'logo': {
-        'text': 'Qorix Docs',
+        'text': 'Qorix Developer',
+        'image_light': '_assets/icons/Qorix-Developer-Icon.png',
+        'image_dark': '_assets/icons/Qorix-Developer-Icon.png',
     },
     'navbar_start': ['navbar-logo'],
     'navbar_center': ['navbar-nav'],
@@ -78,3 +80,7 @@ html_theme_options = {
 html_context = {
     'default_mode': 'light',
 }
+
+
+html_static_path = ['_static']
+html_css_files = ['custom.css']

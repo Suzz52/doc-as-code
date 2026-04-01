@@ -1,7 +1,9 @@
-Qorix Platform Documentation
-============================
+.. image:: /_assets/icons/Qorix_Developer-Icon-Full.png
+   :alt: Qorix Developer
+   :align: center
+   :width: 420px
 
-Welcome to the Qorix software documentation portal.
+Welcome to the Qorix Developer documentation portal.
 
 The structure follows an ASPICE-aligned flow and provides traceability
 from system-level requirements down to software design.
