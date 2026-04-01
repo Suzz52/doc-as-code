@@ -1183,6 +1183,97 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
 15. Architecture Specifications (SWE.2)
 =======================================
 
+.. spec:: Multi-stack workspace bootstrap architecture
+   :id: QDX-SWA-SP-004
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-001
+
+   Defines the workspace root model, stack registry, and initialization flow
+   that creates a deterministic project skeleton for Classic, Adaptive, and
+   Bootloader stacks.
+
+.. spec:: Stack-scaffold orchestration architecture
+   :id: QDX-SWA-SP-005
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-002
+
+   Specifies the scaffold service contracts that generate per-stack folders,
+   baseline YAML files, and metadata descriptors using stack-specific templates.
+
+.. spec:: Source-output boundary architecture
+   :id: QDX-SWA-SP-006
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-003
+
+   Establishes strict separation of editable source configuration and generated
+   outputs via dedicated directory roots and generation-policy guards.
+
+.. spec:: Version-control-safe YAML persistence architecture
+   :id: QDX-SWA-SP-007
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-004
+
+   Defines serialization rules (stable ordering, canonical formatting, UTF-8)
+   so YAML diffs remain predictable and review-friendly in Git workflows.
+
+.. spec:: Atomic persistence integrity architecture
+   :id: QDX-SWA-SP-008
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-005
+
+   Describes temp-write, fsync, and rename semantics for crash-safe saves,
+   preventing partial writes and protecting on-disk model integrity.
+
+.. spec:: Schema-assisted YAML editor architecture
+   :id: QDX-SWA-SP-009
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-006
+
+   Defines IDE schema binding and completion providers that surface valid keys,
+   value domains, and inline constraints while editing YAML artifacts.
+
+.. spec:: Language Server integration architecture
+   :id: QDX-SWA-SP-010
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-007
+
+   Specifies the LSP adapter layer for diagnostics, hover/help, completion, and
+   symbol navigation backed by shared domain semantics.
+
+.. spec:: Localized atomic mutation architecture
+   :id: QDX-SWA-SP-011
+   :status: Draft
+   :domain: shared
+   :implements: QDX-SWE-008
+
+   Defines operation-plan execution with path-scoped edits, transactional
+   rollback, and deterministic mutation ordering for safe localized changes.
+
+.. spec:: C1 SWC/interface designer architecture
+   :id: QDX-SWA-SP-012
+   :status: Draft
+   :domain: classic
+   :implements: QDX-SWE-009
+
+   Specifies component and interface modeling services for C1, including port
+   definitions, data types, and consistency checks for downstream mapping.
+
+.. spec:: C1 runnable-definition architecture
+   :id: QDX-SWA-SP-013
+   :status: Draft
+   :domain: classic
+   :implements: QDX-SWE-010
+
+   Defines runnable authoring structures, trigger metadata, and execution
+   properties used by C1 and handed to C6 mapping workflows.
+
 .. spec:: IDE command bus orchestration component
    :id: QDX-SWA-SP-001
    :status: Draft
