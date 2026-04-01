@@ -4,6 +4,7 @@ author = 'Qorix Developer Team'
 extensions = [
     'sphinx_needs',
     'sphinxcontrib.mermaid',
+    "sphinxcontrib.plantuml",
 ]
 
 master_doc = 'index'
