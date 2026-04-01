@@ -1,3 +1,4 @@
 Sphinx==8.2.3
 sphinx-needs
 sphinxcontrib-mermaid
+pydata-sphinx-theme

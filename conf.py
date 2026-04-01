@@ -12,7 +12,6 @@ exclude_patterns = [
     '_build',
     'Thumbs.db',
     '.DS_Store',
-    '40-swe.3/**',
     '50-testing/**',
     '60-decisions/**',
     '70-ops/**',
@@ -55,5 +54,27 @@ needs_extra_links = [
 
 needs_id_regex = r'^[A-Z0-9-]+$'
 
-html_theme = 'panda3d'
-html_theme_path = ['_themes']
+html_theme = 'pydata_sphinx_theme'
+html_theme_options = {
+    'logo': {
+        'text': 'Qorix Docs',
+    },
+    'navbar_start': ['navbar-logo'],
+    'navbar_center': ['navbar-nav'],
+    'navbar_end': ['theme-switcher', 'navbar-icon-links'],
+    'header_links_before_dropdown': 6,
+    'navigation_with_keys': True,
+    'show_prev_next': True,
+    'secondary_sidebar_items': ['page-toc'],
+    'icon_links': [
+        {
+            'name': 'GitHub',
+            'url': 'https://github.com/eclipse-score/score',
+            'icon': 'fa-brands fa-github',
+        },
+    ],
+}
+
+html_context = {
+    'default_mode': 'light',
+}
