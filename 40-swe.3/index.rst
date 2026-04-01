@@ -1,4 +1,4 @@
-SW Detailed Design
+Design
 ==================
 
 .. toctree::

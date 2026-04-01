@@ -1,4 +1,4 @@
-Software Architecture
+Architecture
 =====================
 
 .. toctree::

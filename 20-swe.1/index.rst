@@ -1,4 +1,4 @@
-Software Requirement
+Software
 ====================
 
 .. toctree::
