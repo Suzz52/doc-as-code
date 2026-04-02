@@ -28,6 +28,13 @@ Software Integration Test Specification
      - SWE.5 — Software Integration and Integration Test
    * - **Parent SWE.2 doc**
      - :ref:`sw_architecture` (QDX-SWA-DOC-001)
+   * - **Companion SYS.4 doc**
+     - QDX-SYS4-DOC-001 — System Integration Test Specification (SYS.4, in progress).
+       SWE.5 verifies software subsystem boundaries with real counterparts.
+       SYS.4 verifies the complete assembled system across hardware, OS and
+       external tool boundaries. Both are required for full V-cycle closure.
+   * - **Companion VAL.1 doc**
+     - QDX-VAL-001 — Validation Plan (VAL.1, in progress)
    * - **Jira epic**
      - QDX-EPIC-PLATFORM-SWE5
    * - **Git path**
@@ -66,8 +73,12 @@ isolation, SWE.5 tests the boundaries between subsystems with real
 - LW-BSW subsystem ↔ Classic Domain Service (schema filter boundary)
 
 **Out of scope for SWE.5:** System-level user scenarios (those belong
-in SYS.5). External tool interoperability (Tresos, DaVinci) beyond
-the ARXML Gateway boundary.
+in SYS.5 — QDX-SYS5-DOC-001, in progress). Complete system integration
+across hardware interfaces, host OS deployment and external tools such as
+Tresos and DaVinci (those belong in SYS.4 — QDX-SYS4-DOC-001, in progress).
+Stakeholder acceptance validation against real operational conditions (VAL.1 —
+QDX-VAL-001, in progress). External tool interoperability beyond the ARXML
+Gateway boundary.
 
 
 2. Integration Test Strategy

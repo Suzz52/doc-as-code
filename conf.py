@@ -71,7 +71,7 @@ html_theme_options = {
     'icon_links': [
         {
             'name': 'GitHub',
-            'url': 'https://github.com/eclipse-score/score',
+            'url': 'https://github.com/qorix-group/qorix-developer-platform',
             'icon': 'fa-brands fa-github',
         },
     ],

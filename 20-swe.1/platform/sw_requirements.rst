@@ -33,6 +33,12 @@ Software Requirements Specification
      - SWE.1 — Software Requirements Analysis
    * - **Parent SYS doc**
      - QDX-SRS-001 — System Requirements Specification (SYS.2)
+   * - **Parent SYS.3 doc**
+     - QDX-SYS3-DOC-001 — System Architecture Description (SYS.3, in progress)
+   * - **Validated by**
+     - VAL.1 — Validation (QDX-VAL-001, in progress)
+   * - **Change authority**
+     - SUP.10 Change Request process — QDX-CRM-001 (in progress)
    * - **Jira epic**
      - QDX-EPIC-PLATFORM-SWEREQ
    * - **Git path**
@@ -725,6 +731,8 @@ matrix.
      projects for all four supported stacks under a common root.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-001
+   :val_test: QDX-VAT-001 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The workspace manager **SHALL** initialise a workspace root directory
    containing project subdirectories for one or more of the supported
@@ -741,6 +749,8 @@ matrix.
      a correctly structured project on demand for each supported stack.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-002
+   :val_test: QDX-VAT-002 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The project scaffolding module **SHALL** create the full directory
    structure, mandatory YAML source files and metadata files for a new
@@ -759,6 +769,8 @@ matrix.
      prevent accidental overwrites and enable clean Git diffs.
    :verification: SWE.6 qualification test | Inspection
    :jira: QDX-SWE-006
+   :val_test: QDX-VAT-003 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The project structure **SHALL** separate user-authored YAML source
    files from generated output artefacts (ARXML, reports, logs) using
@@ -774,6 +786,8 @@ matrix.
      meaningful line-level diffs for review and merge workflows.
    :verification: Inspection | Analysis
    :jira: QDX-SWE-004
+   :val_test: QDX-VAT-004 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    All user-authored configuration **SHALL** be persisted as UTF-8
    encoded YAML files with deterministic key ordering within each file,
@@ -789,6 +803,8 @@ matrix.
      writes during a crash must not corrupt a previously valid YAML file.
    :verification: SWE.6 qualification test — fault injection
    :jira: QDX-SWE-005
+   :val_test: QDX-VAT-005 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The file persistence layer **SHALL** write YAML content using an
    atomic write pattern (write to a temporary file, then rename) such
@@ -809,6 +825,8 @@ matrix.
      and live error indication.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-006
+   :val_test: QDX-VAT-006 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The YAML editor **SHALL** provide JSON Schema-based autocompletion,
    required-field highlighting and inline error squiggles for all
@@ -824,6 +842,8 @@ matrix.
      standard mechanism for editor diagnostics and navigation.
    :verification: SWE.6 qualification test — interface conformance
    :jira: QDX-SWE-007
+   :val_test: QDX-VAT-007 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The IDE Layer **SHALL** expose YAML editing assistance — including
    go-to-definition, find-all-references, hover documentation and
@@ -840,6 +860,8 @@ matrix.
      rewrite unrelated YAML content.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-008
+   :val_test: QDX-VAT-008 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The ``core::ops`` operation model **SHALL** represent each
    configuration change as a path-targeted add, update or delete
@@ -861,6 +883,8 @@ matrix.
      authoring support.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-038
+   :val_test: QDX-VAT-009 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The C1 SWC & Interface designer **SHALL** allow users to create,
    view and edit AUTOSAR Classic Software Components (Atomic, Service,
@@ -878,6 +902,8 @@ matrix.
      must be definable in the designer with their trigger and timing.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-039
+   :val_test: QDX-VAT-010 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The C1 designer **SHALL** allow users to define runnables for each
    Atomic SWC, specifying the trigger type (TIMING, INIT, ISR, DATA
@@ -894,6 +920,8 @@ matrix.
      kept in sync with ``signals-comstack.yaml``.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-040
+   :val_test: QDX-VAT-011 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The C2 Signals & ComStack designer **SHALL** allow users to define
    CAN/LIN/Ethernet bus networks, I-PDUs with CAN IDs, cycle times and
@@ -911,6 +939,8 @@ matrix.
      within the designer with persistence to ``ecu-bsw.yaml``.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-043
+   :val_test: QDX-VAT-012 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The C3 ECU & BSW designer **SHALL** allow users to configure ECU
    instances and assign BSW modules to them, and **SHALL** persist all
@@ -925,6 +955,8 @@ matrix.
      mapping in C6 and must be authorable in C4.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-008
+   :val_test: QDX-VAT-013 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The C4 OS & Scheduling designer **SHALL** allow users to define OS
    tasks with names, priorities, periods and activation types (timing,
@@ -940,6 +972,8 @@ matrix.
      and fault storage and must be manageable in the designer.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-053
+   :val_test: QDX-VAT-014 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The C5 Memory & NvM designer **SHALL** allow users to define memory
    devices (Flash, EEPROM) with total size and sector size, and NvM
@@ -958,6 +992,8 @@ matrix.
      export. Completeness is a prerequisite for valid ARXML generation.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-041
+   :val_test: QDX-VAT-015 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The C6 RTE & Mapping designer **SHALL** allow users to map runnables
    to OS tasks, map SWC P-Ports and R-Ports to communication signals,
@@ -976,6 +1012,8 @@ matrix.
      generation is permitted.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-047
+   :val_test: QDX-VAT-016 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The ``classic::validation`` crate **SHALL** detect and report as
    ERROR any runnable that has no task assignment in ``rte-mapping.yaml``
@@ -997,6 +1035,8 @@ matrix.
      or communication binding is configured.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-048
+   :val_test: QDX-VAT-017 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The A1 Application & Service designer **SHALL** allow users to
    create, view and edit Adaptive AUTOSAR services with the following
@@ -1018,6 +1058,8 @@ matrix.
      many consumers depend on each service to support safe refactoring.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-044
+   :val_test: QDX-VAT-018 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The A1 designer **SHALL** display for each service the count of
    consumer bindings that reference it across the ``communication.yaml``
@@ -1036,6 +1078,8 @@ matrix.
      the AUTOSAR Adaptive equivalent of the Classic ComStack designer.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-004
+   :val_test: QDX-VAT-019 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The A2 Communication designer **SHALL** allow users to define and
    edit service provider instances and service consumer instances with
@@ -1064,6 +1108,8 @@ matrix.
      must be detected before ARXML export.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-052
+   :val_test: QDX-VAT-020 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The ``adaptive::validation`` crate **SHALL** verify that every
    consumer instance declared in ``communication.yaml`` has a resolved
@@ -1083,6 +1129,8 @@ matrix.
      constraint checking in A5 and A6.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-021
+   :val_test: QDX-VAT-021 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The A3 Machine designer **SHALL** allow users to define machines
    with the following attributes: machine name, CPU architecture
@@ -1106,6 +1154,8 @@ matrix.
      This must be detected at validation time.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-054
+   :val_test: QDX-VAT-022 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The ``adaptive::validation`` crate **SHALL** detect any core affinity
    assignment in ``execution.yaml`` or ``deployment.yaml`` that
@@ -1126,6 +1176,8 @@ matrix.
      ARXML manifest generation.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-055
+   :val_test: QDX-VAT-023 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The A4 Platform Services designer **SHALL** allow users to enable or
    disable and configure the following AUTOSAR Adaptive platform
@@ -1156,6 +1208,8 @@ matrix.
      ARXML export.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-056
+   :val_test: QDX-VAT-024 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The A5 Execution designer **SHALL** allow users to define processes
    with the following attributes: process name, associated application
@@ -1181,6 +1235,8 @@ matrix.
      at configuration time.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-057
+   :val_test: QDX-VAT-025 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The ``adaptive::validation`` crate **SHALL** detect and report as
    a WARNING any pair of processes that share one or more core affinity
@@ -1201,6 +1257,8 @@ matrix.
      and MachineManifest ARXML outputs.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-058
+   :val_test: QDX-VAT-026 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The A6 Deployment designer **SHALL** allow users to define
    application-to-machine deployments specifying: application name,
@@ -1225,6 +1283,8 @@ matrix.
      not at ECU integration time.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-059
+   :val_test: QDX-VAT-027 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The ``adaptive::validation`` crate **SHALL** verify for each target
    machine that the aggregate RAM demand of all applications deployed
@@ -1246,6 +1306,8 @@ matrix.
      ARXML generation is permitted.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-028
+   :val_test: QDX-VAT-028 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The workspace-level consistency check **SHALL** validate the
    following cross-file invariants for every Adaptive project:
@@ -1281,6 +1343,8 @@ matrix.
      after save, and vice versa.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-007
+   :val_test: QDX-VAT-029 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    After any valid designer operation that results in a model mutation,
    the Command Bus **SHALL** route the corresponding ``core::ops``
@@ -1297,6 +1361,8 @@ matrix.
      update on save or explicit refresh without manual reload.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-051
+   :val_test: QDX-VAT-030 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    When a YAML source file is saved by the YAML editor, the IDE Layer
    **SHALL** re-parse the file via ``core::yaml``, update the in-memory
@@ -1317,6 +1383,8 @@ matrix.
      require a network round-trip.
    :verification: SWE.6 qualification test — latency measurement
    :jira: QDX-SWE-031
+   :val_test: QDX-VAT-031 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The ``qorix_core_wasm`` WASM build target **SHALL** provide a
    ``validateYaml(content, schema_id)`` export that performs JSON Schema
@@ -1333,6 +1401,8 @@ matrix.
      rules require the full domain model loaded in the domain service.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-032
+   :val_test: QDX-VAT-032 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Rust Domain Service **SHALL** perform deep semantic validation
    on demand, detecting and reporting: unresolved cross-file references,
@@ -1353,6 +1423,8 @@ matrix.
      resolve at validation time.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-005
+   :val_test: QDX-VAT-033 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The ``core::validation`` rule engine **SHALL** resolve symbolic
    references between YAML files within the same project boundary during
@@ -1369,6 +1441,8 @@ matrix.
      must not be produced from a model with unresolved ERROR diagnostics.
    :verification: SWE.6 qualification test — negative path
    :jira: QDX-SWE-053
+   :val_test: QDX-VAT-034 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The generation pipeline **SHALL** refuse to invoke the ARXML Gateway
    and **SHALL** return a non-zero exit code and structured error
@@ -1384,6 +1458,8 @@ matrix.
      multi-designer project must be checked as a whole before release.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-052
+   :val_test: QDX-VAT-035 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Rust Domain Service **SHALL** provide a workspace-consistency-
    check operation that loads all YAML files across all projects in the
@@ -1406,6 +1482,8 @@ matrix.
      presented in a unified, actionable panel.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-053
+   :val_test: QDX-VAT-036 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Diagnostics Panel **SHALL** display all validation diagnostics
    from both the WASM Bridge and the Domain Service Client, grouped by
@@ -1424,6 +1502,8 @@ matrix.
      be able to act on diagnostics without decoding internal identifiers.
    :verification: Demonstration | Inspection
    :jira: QDX-SWE-051
+   :val_test: QDX-VAT-037 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    Every diagnostic message produced by ``core::validation``,
    ``classic::validation`` and ``adaptive::validation`` **SHALL** use
@@ -1446,6 +1526,8 @@ matrix.
      must always produce identical ARXML output.
    :verification: Analysis | SWE.6 qualification test — reproducibility
    :jira: QDX-SWE-038
+   :val_test: QDX-VAT-038 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The generation pipeline — comprising the Rust Domain Service loading
    the YAML model, the ``core::gql_client`` GraphQL call to the ARXML
@@ -1465,6 +1547,8 @@ matrix.
      EMF/ARTOP directly.
    :verification: SWE.6 qualification test — interface conformance
    :jira: QDX-SWE-039
+   :val_test: QDX-VAT-039 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Rust Domain Service **SHALL** invoke ARXML export exclusively
    through ``core::gql_client`` GraphQL mutations targeting the ARXML
@@ -1483,6 +1567,8 @@ matrix.
      YAML semantics.
    :verification: SWE.6 qualification test — interface conformance
    :jira: QDX-SWE-040
+   :val_test: QDX-VAT-040 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The ``classic::migration`` and ``adaptive::migration`` crates **SHALL**
    transform imported ARXML (via the ARXML Gateway) into Qorix YAML
@@ -1502,6 +1588,8 @@ matrix.
      a given ARXML artefact.
    :verification: Inspection | Analysis
    :jira: QDX-SWE-041
+   :val_test: QDX-VAT-041 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The generation pipeline **SHALL** produce a provenance metadata file
    alongside each generated ARXML output, recording: the Git commit SHA
@@ -1520,6 +1608,8 @@ matrix.
      targets.
    :verification: SWE.6 qualification test | Inspection
    :jira: QDX-SWE-051
+   :val_test: QDX-VAT-042 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    On completion of any import or export operation, the platform
    **SHALL** report the AUTOSAR schema version targeted (e.g.
@@ -1541,6 +1631,8 @@ matrix.
      and mutations.
    :verification: SWE.6 qualification test — interface conformance
    :jira: QDX-SWE-043
+   :val_test: QDX-VAT-043 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The ARXML Gateway **SHALL** expose all AUTOSAR model read and
    write operations through a versioned GraphQL schema. The schema
@@ -1558,6 +1650,8 @@ matrix.
      Search must be backed by an indexed, queryable interface.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-044
+   :val_test: QDX-VAT-044 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Rust Domain Service **SHALL** provide a search operation
    accepting a text query and returning matching configuration elements
@@ -1580,6 +1674,8 @@ matrix.
      for pipeline use.
    :verification: Demonstration | SWE.6 qualification test
    :jira: QDX-SWE-045
+   :val_test: QDX-VAT-045 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The ``qorix_cli`` binary **SHALL** provide at minimum the following
    subcommands: ``validate <project-path>`` (runs full semantic
@@ -1598,6 +1694,8 @@ matrix.
      between in-IDE validation and CI validation results.
    :verification: Inspection — single crate tree, three build targets
    :jira: QDX-SWE-046
+   :val_test: QDX-VAT-046 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The ``core::*``, ``classic::*`` and ``adaptive::*`` crates **SHALL**
    compile without conditional compilation flags that alter validation
@@ -1620,6 +1718,8 @@ matrix.
      operations with user review.
    :verification: Inspection | SWE.6 qualification test
    :jira: QDX-SWE-047
+   :val_test: QDX-VAT-047 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Qorix Agent **SHALL** produce all proposed configuration changes
    as a structured ``OperationPlan`` — a typed list of ``core::ops``
@@ -1637,6 +1737,8 @@ matrix.
      engineering responsibility must remain with the human user.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-048
+   :val_test: QDX-VAT-048 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The AI Chat Panel **SHALL** present each ``OperationPlan`` with an
    explicit Accept and Reject control per plan. Applying the plan to the
@@ -1655,6 +1757,8 @@ matrix.
      errors before the user continues.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-049
+   :val_test: QDX-VAT-049 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    Immediately after an accepted ``OperationPlan`` is applied and
    persisted, the WASM Bridge **SHALL** trigger a ``validateYaml()``
@@ -1671,6 +1775,8 @@ matrix.
      context to avoid cross-domain tool invocations.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-050
+   :val_test: QDX-VAT-050 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Intent Router **SHALL** determine the target stack (Classic or
    Adaptive) from the active workspace project context before routing a
@@ -1688,6 +1794,8 @@ matrix.
      prohibit transmission of project YAML to external LLM services.
    :verification: Inspection | Analysis
    :jira: QDX-SWE-051
+   :val_test: QDX-VAT-051 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Qorix Agent **SHALL** read a deployment-level configuration
    setting that controls whether YAML content fragments may be included
@@ -1708,6 +1816,8 @@ matrix.
    :rationale: Derived from auditability of user-visible critical actions.
    :verification: Inspection | Analysis
    :jira: QDX-SWE-052
+   :val_test: QDX-VAT-052 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The platform **SHALL** append an audit record to a structured log
    file for each of the following events: ARXML generation completed,
@@ -1724,6 +1834,8 @@ matrix.
    :rationale: Derived from access control for privileged operations.
    :verification: SWE.6 qualification test | Inspection
    :jira: QDX-SWE-053
+   :val_test: QDX-VAT-053 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    When authentication is configured for the deployment, the platform
    **SHALL** require a valid authenticated session before permitting
@@ -1744,6 +1856,8 @@ matrix.
      bound must be met by the software implementation.
    :verification: SWE.6 qualification test — performance measurement
    :jira: QDX-SWE-054
+   :val_test: QDX-VAT-054 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The workspace loading sequence — file system scan, YAML parsing via
    ``core::yaml``, in-memory model construction for all projects —
@@ -1760,6 +1874,8 @@ matrix.
      IDE rendering.
    :verification: SWE.6 qualification test — performance measurement
    :jira: QDX-SWE-055
+   :val_test: QDX-VAT-055 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The ``qorix_core_wasm`` ``validateYaml()`` function **SHALL** return
    a diagnostic result within 500 ms for a single YAML file of up to
@@ -1773,6 +1889,8 @@ matrix.
    :rationale: Derived from search responsiveness. 5-second system bound.
    :verification: SWE.6 qualification test — performance measurement
    :jira: QDX-SWE-056
+   :val_test: QDX-VAT-056 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Rust Domain Service search operation **SHALL** return results
    within 5 seconds for a text query against a workspace of up to
@@ -1787,6 +1905,8 @@ matrix.
      system bound covers the full pipeline end-to-end.
    :verification: SWE.6 qualification test — performance measurement
    :jira: QDX-SWE-057
+   :val_test: QDX-VAT-057 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The complete generation pipeline — YAML load, semantic validation,
    GraphQL mutation to ARXML Gateway, ARTOP serialisation and file write
@@ -1802,6 +1922,8 @@ matrix.
    :rationale: Derived from non-blocking UI during long-running operations.
    :verification: Demonstration | SWE.6 qualification test
    :jira: QDX-SWE-058
+   :val_test: QDX-VAT-058 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    Any operation invoked from the IDE Layer that is expected to exceed
    5 seconds (workspace validation, ARXML generation, AI OperationPlan
@@ -1822,6 +1944,8 @@ matrix.
      requires identical functionality across both IDE hosts.
    :verification: SWE.6 qualification test — interface conformance
    :jira: QDX-SWE-059
+   :val_test: QDX-VAT-059 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The IDE Layer **SHALL** expose identical designer, validation,
    generation and AI assistance functionality in both the VS Code
@@ -1838,6 +1962,8 @@ matrix.
      WASM enables local validation without network access.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-060
+   :val_test: QDX-VAT-060 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    Local YAML authoring, WASM-based schema validation and designer
    canvas display **SHALL** be fully functional without network
@@ -1854,6 +1980,8 @@ matrix.
    :rationale: Derived from extensibility without core modification.
    :verification: Analysis | Demonstration
    :jira: QDX-SWE-061
+   :val_test: QDX-VAT-061 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    New domain designers, validation rule sets or generation targets
    **SHALL** be addable through the platform's extension mechanism
@@ -1870,6 +1998,8 @@ matrix.
    :rationale: Derived from backward compatibility of project content.
    :verification: SWE.6 qualification test | Analysis
    :jira: QDX-SWE-062
+   :val_test: QDX-VAT-062 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    When a workspace created by an earlier supported Qorix Developer
    version is opened, the platform **SHALL** detect the project schema
@@ -1906,6 +2036,8 @@ matrix.
      downstream BPCT designers. Derived from project scaffolding.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-063
+   :val_test: QDX-VAT-063 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The BD1 Project & MCU designer **SHALL** allow users to select the
    target MCU family from the supported set (TC3xx, TC4xx, RH850,
@@ -1932,6 +2064,8 @@ matrix.
      can be defined.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-064
+   :val_test: QDX-VAT-064 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The BD2 Communication designer **SHALL** allow users to add and
    configure one or more communication channels, specifying for each:
@@ -1957,6 +2091,8 @@ matrix.
      security constraints can be computed in BD5 and BD6.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-065
+   :val_test: QDX-VAT-065 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The BD3 Memory & Flash designer **SHALL** allow users to define
    flash memory regions with the following attributes per region: start
@@ -1980,6 +2116,8 @@ matrix.
      constraint produces an unflashable configuration.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-066
+   :val_test: QDX-VAT-066 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The BPCT validation engine **SHALL** verify that
    ``FBL_FLASH_BLOCK_SIZE`` is a positive integer multiple of
@@ -2000,6 +2138,8 @@ matrix.
      Reset transitions).
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-067
+   :val_test: QDX-VAT-067 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The BD4 Core & Diagnostics designer **SHALL** display a UDS session
    state machine diagram showing session transitions between Default
@@ -2026,6 +2166,8 @@ matrix.
      be validated as a chain, not as independent values.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-068
+   :val_test: QDX-VAT-068 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The BD5 Timing & HW designer **SHALL** allow users to configure the
    following timing and watchdog parameters: ``FBL_TIMER_TICK_US``,
@@ -2052,6 +2194,8 @@ matrix.
      hard safety constraint for the bootloader.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-069
+   :val_test: QDX-VAT-069 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The BPCT validation engine **SHALL** implement rule ``VR_007``:
    when ``FBL_WDG_DISABLE_DURING_ERASE`` is ``FALSE``,
@@ -2075,6 +2219,8 @@ matrix.
      inputs.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-070
+   :val_test: QDX-VAT-070 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    When ``FBL_MCU_CLOCK_MHZ`` in ``bl-project.yaml`` or
    ``FBL_FLASH_BLOCK_SIZE`` in ``bl-memory.yaml`` is modified, the
@@ -2096,6 +2242,8 @@ matrix.
      management.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-071
+   :val_test: QDX-VAT-071 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The BD6 Crypto & Security designer **SHALL** allow users to configure
    the following security subsystems:
@@ -2129,6 +2277,8 @@ matrix.
      algorithms before ARXML/header generation is permitted.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-072
+   :val_test: QDX-VAT-072 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The BPCT validation engine **SHALL** implement rule ``VR_013``:
    when ``FBL_SEC_BOOT_SIG_ALGO`` is set to RSA1024, a WARNING
@@ -2149,6 +2299,8 @@ matrix.
      memory map defined in BD3.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-073
+   :val_test: QDX-VAT-073 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The BPCT validation engine **SHALL** verify that each key address
    configured in ``bl-security.yaml`` (``FBL_SEC_BOOT_PUBLIC_KEY_ADDR``
@@ -2172,6 +2324,8 @@ matrix.
      check model used by Classic and Adaptive designers.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-074
+   :val_test: QDX-VAT-074 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The BPCT validation engine **SHALL** evaluate all defined VR_NNN
    constraint rules across the complete set of six BPCT YAML files in
@@ -2193,6 +2347,8 @@ matrix.
      deterministic and schema-version-stamped.
    :verification: SWE.6 qualification test | Analysis
    :jira: QDX-SWE-075
+   :val_test: QDX-VAT-075 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The BPCT generation engine **SHALL** produce ``cfg.h``, ``cfg.c``
    and ``Makefile.mak`` from validated BPCT YAML sources. Each
@@ -2215,6 +2371,8 @@ matrix.
      fast feedback loop.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-076
+   :val_test: QDX-VAT-076 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The BD1 designer **SHALL** display a real-time output preview panel
    showing the ``cfg.h`` ``#define`` macros that would be generated
@@ -2242,6 +2400,8 @@ matrix.
      whether the Qorix Agent is otherwise running.
    :verification: SWE.6 qualification test | Inspection
    :jira: QDX-SWE-077
+   :val_test: QDX-VAT-077 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The IDE Layer **SHALL** activate AI-Assist capabilities (AI Chat
    Panel context injection, OperationPlan suggestions, AI toolbar
@@ -2274,6 +2434,8 @@ matrix.
      relevant to the engineer's current view.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-078
+   :val_test: QDX-VAT-078 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    When a user submits a prompt in the AI Chat Panel with a domain
    designer open and the corresponding extension installed, the IDE
@@ -2296,6 +2458,8 @@ matrix.
      permitted — they bypass the domain-specific validation layers.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-079
+   :val_test: QDX-VAT-079 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    An OperationPlan generated by the Qorix Agent in response to a
    prompt submitted from within a domain designer **SHALL** only contain
@@ -2316,6 +2480,8 @@ matrix.
      the correct tools.
    :verification: Inspection | SWE.6 qualification test
    :jira: QDX-SWE-080
+   :val_test: QDX-VAT-080 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Qorix Agent Tool Registry **SHALL** include a BPCT MCP tool set,
    activated when the BPCT extension is installed, providing at minimum
@@ -2364,6 +2530,8 @@ matrix.
      (Classic) to the LW-BSW target of 6 person-days.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-081
+   :val_test: QDX-VAT-081 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The LW-BSW project scaffolding **SHALL** accept as import inputs
    an ECU/DEXT XML extract and/or a legacy non-AUTOSAR DBC file. The
@@ -2389,6 +2557,8 @@ matrix.
      parameter sets.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-082
+   :val_test: QDX-VAT-082 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The LW-BSW designer **SHALL** provide a dedicated configuration
    view for each of the following ten LW-BSW modules, persisting
@@ -2430,6 +2600,8 @@ matrix.
      no Ethernet).
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-083
+   :val_test: QDX-VAT-083 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The LW-BSW communication designer **SHALL** allow configuration of
    CAN channels as a mandatory communication medium and LIN channels
@@ -2455,6 +2627,8 @@ matrix.
      the violation during target integration.
    :verification: SWE.6 qualification test | Analysis
    :jira: QDX-SWE-084
+   :val_test: QDX-VAT-084 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The LW-BSW validation engine **SHALL** estimate ROM consumption,
    RAM consumption, and CPU load contribution from the current
@@ -2480,6 +2654,8 @@ matrix.
      runtime fault investigations.
    :verification: SWE.6 qualification test | Analysis
    :jira: QDX-SWE-085
+   :val_test: QDX-VAT-085 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The LW-BSW validation engine **SHALL** produce a scheduling map
    showing all configured OS tasks with their priorities, periods,
@@ -2504,6 +2680,8 @@ matrix.
      for the integrating engineer and for ASPICE process evidence.
    :verification: SWE.6 qualification test | Inspection
    :jira: QDX-SWE-086
+   :val_test: QDX-VAT-086 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The LW-BSW generation pipeline **SHALL** produce a Config Report
    alongside the generated module configuration ``.h`` and ``.c``
@@ -2539,6 +2717,8 @@ matrix.
      diagnostics.
    :verification: SWE.6 qualification test | Analysis
    :jira: QDX-SWE-087
+   :val_test: QDX-VAT-087 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The LW-BSW generation engine **SHALL** produce one ``.h`` and one
    ``.c`` configuration file per LW-BSW module from the validated
@@ -2564,6 +2744,8 @@ matrix.
      without integration-time surprises.
    :verification: SWE.6 qualification test | Analysis
    :jira: QDX-SWE-088
+   :val_test: QDX-VAT-088 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    When a DBC file or ARXML network description has been imported into
    the LW-BSW project, the LW-BSW validation engine **SHALL** verify
@@ -2590,6 +2772,8 @@ matrix.
      not just localised fix suggestions.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-089
+   :val_test: QDX-VAT-089 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    When the LW-BSW extension is installed and AI-Assist is active
    (per QDX-SWE-077), the Qorix Agent **SHALL** provide a Config
@@ -2630,6 +2814,8 @@ matrix.
      build failure.
    :verification: SWE.6 qualification test | Inspection
    :jira: QDX-SWE-090
+   :val_test: QDX-VAT-090 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The LW-BSW designer **SHALL** restrict all parameter and feature
    selections to those supported within AUTOSAR ICC-2 conformance.
@@ -2669,6 +2855,8 @@ matrix.
      screen to support the common workflow of resuming work.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-091
+   :val_test: QDX-VAT-091 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The project creation wizard **SHALL** present a welcome screen
    displaying all supported stack types as selectable cards, each
@@ -2692,6 +2880,8 @@ matrix.
      schema and the target toolchain are mismatched.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-092
+   :val_test: QDX-VAT-092 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    When AUTOSAR Classic is selected, the wizard **SHALL** present a
    platform version selection step offering at minimum:
@@ -2718,6 +2908,8 @@ matrix.
      with realistic starter configurations, not empty stubs.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-093
+   :val_test: QDX-VAT-093 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Classic AUTOSAR project creation wizard **SHALL** present a
    template selection step with the following built-in templates at
@@ -2740,6 +2932,8 @@ matrix.
      hardware-dependent defaults in the C3 and C5 designers.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-094
+   :val_test: QDX-VAT-094 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Classic AUTOSAR configuration step **SHALL** collect: project
    name (alphanumeric and underscore, real-time format validation),
@@ -2762,6 +2956,8 @@ matrix.
      AUTOSAR programme archetypes.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-095
+   :val_test: QDX-VAT-095 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Adaptive AUTOSAR project creation wizard **SHALL** present a
    template selection step with the following built-in templates at
@@ -2782,6 +2978,8 @@ matrix.
      ``platform-services.yaml`` content.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-096
+   :val_test: QDX-VAT-096 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Adaptive AUTOSAR configuration step **SHALL** collect: project
    name (alphanumeric and underscore, real-time validation), optional
@@ -2803,6 +3001,8 @@ matrix.
      the risk of misconfigured initial VR_NNN constraints.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-097
+   :val_test: QDX-VAT-097 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The Bootloader project creation wizard **SHALL** present a template
    selection step with the following built-in templates at minimum:
@@ -2827,6 +3027,8 @@ matrix.
      the memory map is defined.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-098
+   :val_test: QDX-VAT-098 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    When Bootloader (BPCT) is selected, the wizard **SHALL** collect:
 
@@ -2866,6 +3068,8 @@ matrix.
      20-person-day integration overhead to the 6-person-day target.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-099
+   :val_test: QDX-VAT-099 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    When LW-BSW is selected, the wizard **SHALL** collect: project
    name (alphanumeric and underscore), optional description, MCU
@@ -2891,6 +3095,8 @@ matrix.
      not just field values.
    :verification: SWE.6 qualification test | Demonstration
    :jira: QDX-SWE-100
+   :val_test: QDX-VAT-100 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The final step of the project creation wizard for all stack types
    **SHALL** display a read-only review screen showing: stack type
@@ -2916,6 +3122,8 @@ matrix.
      configuration complexity.
    :verification: SWE.6 qualification test
    :jira: QDX-SWE-101
+   :val_test: QDX-VAT-101 (VAL.1 — pending QDX-VAL-001)
+   :cr_id: — (raise CR via SUP.10 process when requirement changes)
 
    The project creation wizard **SHALL** display a persistent step
    indicator showing all steps in the current stack's sequence and
@@ -2940,13 +3148,14 @@ matrix.
 =============================================
 
 .. note::
-   This is the ASPICE SWE.1 ↔ SWE.6 traceability record.
-   ``SWE.5 integ.`` column identifies integration-level tests for
-   interface boundaries (WASM bridge, Domain Service API, GraphQL,
-   BPCT and LW-BSW generation engines, project creation wizard).
+   This is the full ASPICE SWE.1 traceability record covering SWE.6
+   qualification tests, SWE.5 integration tests, VAL.1 validation tests
+   and SUP.10 change request linkage. ``VAL.1 val. test`` references
+   QDX-VAT-NNN blocks in QDX-VAL-001 (in progress). ``CR ID`` references
+   the Jira change request that last modified the requirement.
 
 .. list-table::
-   :widths: 15 30 14 14 12 5
+   :widths: 12 24 11 10 10 10 8 5
    :header-rows: 1
 
    * - SW Req ID
@@ -2954,11 +3163,15 @@ matrix.
      - Parent SYS req
      - SWE.6 qual. test
      - SWE.5 integ. test
+     - VAL.1 val. test
+     - CR ID
      - Status
    * - QDX-SWE-001
      - Multi-stack workspace initialisation
      - QDX-SYS-001
      - QDX-QT-001
+     - —
+     - QDX-VAT-001
      - —
      - Draft
    * - QDX-SWE-002
@@ -2966,11 +3179,15 @@ matrix.
      - QDX-SYS-002
      - QDX-QT-002
      - —
+     - QDX-VAT-002
+     - —
      - Draft
    * - QDX-SWE-003
      - Source/output directory separation
      - QDX-SYS-044
      - QDX-QT-003
+     - —
+     - QDX-VAT-003
      - —
      - Draft
    * - QDX-SWE-004
@@ -2978,11 +3195,15 @@ matrix.
      - QDX-SYS-019
      - QDX-QT-004
      - —
+     - QDX-VAT-004
+     - —
      - Draft
    * - QDX-SWE-005
      - Atomic save with integrity protection
      - QDX-SYS-033
      - QDX-QT-005
+     - —
+     - QDX-VAT-005
      - —
      - Draft
    * - QDX-SWE-006
@@ -2990,17 +3211,23 @@ matrix.
      - QDX-SYS-003
      - QDX-QT-006
      - —
+     - QDX-VAT-006
+     - —
      - Draft
    * - QDX-SWE-007
      - Language server protocol integration
      - QDX-SYS-029
      - QDX-QT-007
      - QDX-IT-001
+     - QDX-VAT-007
+     - —
      - Draft
    * - QDX-SWE-008
      - Localised atomic model mutations
      - QDX-SYS-013
      - QDX-QT-008
+     - —
+     - QDX-VAT-008
      - —
      - Draft
    * - QDX-SWE-009
@@ -3008,11 +3235,15 @@ matrix.
      - QDX-SYS-004
      - QDX-QT-009
      - —
+     - QDX-VAT-009
+     - —
      - Draft
    * - QDX-SWE-010
      - C1 — SWC runnable definition
      - QDX-SYS-004
      - QDX-QT-010
+     - —
+     - QDX-VAT-010
      - —
      - Draft
    * - QDX-SWE-011
@@ -3020,11 +3251,15 @@ matrix.
      - QDX-SYS-004
      - QDX-QT-011
      - —
+     - QDX-VAT-011
+     - —
      - Draft
    * - QDX-SWE-012
      - C3 — ECU and BSW designer
      - QDX-SYS-004
      - QDX-QT-012
+     - —
+     - QDX-VAT-012
      - —
      - Draft
    * - QDX-SWE-013
@@ -3032,11 +3267,15 @@ matrix.
      - QDX-SYS-004
      - QDX-QT-013
      - —
+     - QDX-VAT-013
+     - —
      - Draft
    * - QDX-SWE-014
      - C5 — Memory and NvM designer
      - QDX-SYS-004
      - QDX-QT-014
+     - —
+     - QDX-VAT-014
      - —
      - Draft
    * - QDX-SWE-015
@@ -3044,11 +3283,15 @@ matrix.
      - QDX-SYS-004
      - QDX-QT-015
      - —
+     - QDX-VAT-015
+     - —
      - Draft
    * - QDX-SWE-016
      - Unmapped element detection in C6
      - QDX-SYS-007
      - QDX-QT-016
+     - —
+     - QDX-VAT-016
      - —
      - Draft
    * - QDX-SWE-017
@@ -3056,11 +3299,15 @@ matrix.
      - QDX-SYS-004
      - QDX-QT-017
      - —
+     - QDX-VAT-017
+     - —
      - Draft
    * - QDX-SWE-018
      - A1 — Service cross-reference tracking
      - QDX-SYS-008
      - QDX-QT-018
+     - —
+     - QDX-VAT-018
      - —
      - Draft
    * - QDX-SWE-019
@@ -3068,11 +3315,15 @@ matrix.
      - QDX-SYS-004
      - QDX-QT-019
      - QDX-IT-011
+     - QDX-VAT-019
+     - —
      - Draft
    * - QDX-SWE-020
      - A2 — Service binding completeness validati
      - QDX-SYS-007
      - QDX-QT-020
+     - —
+     - QDX-VAT-020
      - —
      - Draft
    * - QDX-SWE-021
@@ -3080,11 +3331,15 @@ matrix.
      - QDX-SYS-004
      - QDX-QT-021
      - —
+     - QDX-VAT-021
+     - —
      - Draft
    * - QDX-SWE-022
      - A3 — Disabled core reference detection
      - QDX-SYS-007
      - QDX-QT-022
+     - —
+     - QDX-VAT-022
      - —
      - Draft
    * - QDX-SWE-023
@@ -3092,11 +3347,15 @@ matrix.
      - QDX-SYS-004
      - QDX-QT-023
      - —
+     - QDX-VAT-023
+     - —
      - Draft
    * - QDX-SWE-024
      - A5 — Execution management designer
      - QDX-SYS-004
      - QDX-QT-024
+     - —
+     - QDX-VAT-024
      - —
      - Draft
    * - QDX-SWE-025
@@ -3104,11 +3363,15 @@ matrix.
      - QDX-SYS-007
      - QDX-QT-025
      - —
+     - QDX-VAT-025
+     - —
      - Draft
    * - QDX-SWE-026
      - A6 — Deployment designer
      - QDX-SYS-004
      - QDX-QT-026
+     - —
+     - QDX-VAT-026
      - —
      - Draft
    * - QDX-SWE-027
@@ -3116,41 +3379,55 @@ matrix.
      - QDX-SYS-007
      - QDX-QT-027
      - —
+     - QDX-VAT-027
+     - —
      - Draft
    * - QDX-SWE-028
      - Adaptive cross-designer consistency check
      - QDX-SYS-020
      - QDX-QT-028
      - QDX-IT-012
+     - QDX-VAT-028
+     - —
      - Draft
    * - QDX-SWE-029
      - Designer-to-YAML synchronisation
      - QDX-SYS-005
      - QDX-QT-029
      - QDX-IT-002
+     - QDX-VAT-029
+     - —
      - Draft
    * - QDX-SWE-030
      - YAML-to-designer synchronisation
      - QDX-SYS-005
      - QDX-QT-030
      - QDX-IT-002
+     - QDX-VAT-030
+     - —
      - Draft
    * - QDX-SWE-031
      - In-IDE WASM fast validation
      - QDX-SYS-006
      - QDX-QT-031
      - QDX-IT-003
+     - QDX-VAT-031
+     - —
      - Draft
    * - QDX-SWE-032
      - Deep semantic validation via domain servic
      - QDX-SYS-007
      - QDX-QT-032
      - QDX-IT-004
+     - QDX-VAT-032
+     - —
      - Draft
    * - QDX-SWE-033
      - Cross-file reference resolution
      - QDX-SYS-008
      - QDX-QT-033
+     - —
+     - QDX-VAT-033
      - —
      - Draft
    * - QDX-SWE-034
@@ -3158,17 +3435,23 @@ matrix.
      - QDX-SYS-036
      - QDX-QT-034
      - —
+     - QDX-VAT-034
+     - —
      - Draft
    * - QDX-SWE-035
      - Workspace-level consistency check
      - QDX-SYS-020
      - QDX-QT-035
      - QDX-IT-005
+     - QDX-VAT-035
+     - —
      - Draft
    * - QDX-SWE-036
      - Diagnostics panel presentation
      - QDX-SYS-014
      - QDX-QT-036
+     - —
+     - QDX-VAT-036
      - —
      - Draft
    * - QDX-SWE-037
@@ -3176,29 +3459,39 @@ matrix.
      - QDX-SYS-042
      - QDX-QT-037
      - —
+     - QDX-VAT-037
+     - —
      - Draft
    * - QDX-SWE-038
      - Deterministic ARXML generation
      - QDX-SYS-009
      - QDX-QT-038
      - QDX-IT-006
+     - QDX-VAT-038
+     - —
      - Draft
    * - QDX-SWE-039
      - ARXML export via ARTOP GraphQL gateway
      - QDX-SYS-010
      - QDX-QT-039
      - QDX-IT-007
+     - QDX-VAT-039
+     - —
      - Draft
    * - QDX-SWE-040
      - ARXML import and lossy-conversion reportin
      - QDX-SYS-011
      - QDX-QT-040
      - QDX-IT-007
+     - QDX-VAT-040
+     - —
      - Draft
    * - QDX-SWE-041
      - Generation provenance recording
      - QDX-SYS-015
      - QDX-QT-041
+     - —
+     - QDX-VAT-041
      - —
      - Draft
    * - QDX-SWE-042
@@ -3206,17 +3499,23 @@ matrix.
      - QDX-SYS-030
      - QDX-QT-042
      - —
+     - QDX-VAT-042
+     - —
      - Draft
    * - QDX-SWE-043
      - GraphQL API contract for model access
      - QDX-SYS-012
      - QDX-QT-043
      - QDX-IT-008
+     - QDX-VAT-043
+     - —
      - Draft
    * - QDX-SWE-044
      - Search and navigation API
      - QDX-SYS-018
      - QDX-QT-044
+     - —
+     - QDX-VAT-044
      - —
      - Draft
    * - QDX-SWE-045
@@ -3224,11 +3523,15 @@ matrix.
      - QDX-SYS-031
      - QDX-QT-045
      - QDX-IT-009
+     - QDX-VAT-045
+     - —
      - Draft
    * - QDX-SWE-046
      - Same Rust core for all build targets
      - QDX-SYS-031
      - QDX-QT-046
+     - —
+     - QDX-VAT-046
      - —
      - Draft
    * - QDX-SWE-047
@@ -3236,11 +3539,15 @@ matrix.
      - QDX-SYS-016
      - QDX-QT-047
      - QDX-IT-010
+     - QDX-VAT-047
+     - —
      - Draft
    * - QDX-SWE-048
      - User acceptance gate for AI suggestions
      - QDX-SYS-017
      - QDX-QT-048
+     - —
+     - QDX-VAT-048
      - —
      - Draft
    * - QDX-SWE-049
@@ -3248,11 +3555,15 @@ matrix.
      - QDX-SYS-006
      - QDX-QT-049
      - —
+     - QDX-VAT-049
+     - —
      - Draft
    * - QDX-SWE-050
      - Intent Router — Classic vs Adaptive dispat
      - QDX-SYS-016
      - QDX-QT-050
+     - —
+     - QDX-VAT-050
      - —
      - Draft
    * - QDX-SWE-051
@@ -3260,11 +3571,15 @@ matrix.
      - QDX-SYS-037
      - QDX-QT-051
      - —
+     - QDX-VAT-051
+     - —
      - Draft
    * - QDX-SWE-052
      - Audit log for critical user actions
      - QDX-SYS-035
      - QDX-QT-052
+     - —
+     - QDX-VAT-052
      - —
      - Draft
    * - QDX-SWE-053
@@ -3272,11 +3587,15 @@ matrix.
      - QDX-SYS-034
      - QDX-QT-053
      - —
+     - QDX-VAT-053
+     - —
      - Draft
    * - QDX-SWE-054
      - Workspace open time
      - QDX-SYS-022
      - QDX-QT-054
+     - —
+     - QDX-VAT-054
      - —
      - Draft
    * - QDX-SWE-055
@@ -3284,11 +3603,15 @@ matrix.
      - QDX-SYS-023
      - QDX-QT-055
      - —
+     - QDX-VAT-055
+     - —
      - Draft
    * - QDX-SWE-056
      - Search response time
      - QDX-SYS-024
      - QDX-QT-056
+     - —
+     - QDX-VAT-056
      - —
      - Draft
    * - QDX-SWE-057
@@ -3296,11 +3619,15 @@ matrix.
      - QDX-SYS-025
      - QDX-QT-057
      - —
+     - QDX-VAT-057
+     - —
      - Draft
    * - QDX-SWE-058
      - Non-blocking UI for long-running operation
      - QDX-SYS-026
      - QDX-QT-058
+     - —
+     - QDX-VAT-058
      - —
      - Draft
    * - QDX-SWE-059
@@ -3308,11 +3635,15 @@ matrix.
      - QDX-SYS-027
      - QDX-QT-059
      - —
+     - QDX-VAT-059
+     - —
      - Draft
    * - QDX-SWE-060
      - Offline local authoring and validation
      - QDX-SYS-043
      - QDX-QT-060
+     - —
+     - QDX-VAT-060
      - —
      - Draft
    * - QDX-SWE-061
@@ -3320,11 +3651,15 @@ matrix.
      - QDX-SYS-041
      - QDX-QT-061
      - —
+     - QDX-VAT-061
+     - —
      - Draft
    * - QDX-SWE-062
      - Backward-compatible project migration
      - QDX-SYS-040
      - QDX-QT-062
+     - —
+     - QDX-VAT-062
      - —
      - Draft
    * - QDX-SWE-063
@@ -3332,11 +3667,15 @@ matrix.
      - QDX-SYS-002
      - QDX-QT-063
      - —
+     - QDX-VAT-063
+     - —
      - Draft
    * - QDX-SWE-064
      - BPCT communication channel configuration (
      - QDX-SYS-004
      - QDX-QT-064
+     - —
+     - QDX-VAT-064
      - —
      - Draft
    * - QDX-SWE-065
@@ -3344,11 +3683,15 @@ matrix.
      - QDX-SYS-004
      - QDX-QT-065
      - —
+     - QDX-VAT-065
+     - —
      - Draft
    * - QDX-SWE-066
      - BPCT flash block size constraint validatio
      - QDX-SYS-007
      - QDX-QT-066
+     - —
+     - QDX-VAT-066
      - —
      - Draft
    * - QDX-SWE-067
@@ -3356,11 +3699,15 @@ matrix.
      - QDX-SYS-004
      - QDX-QT-067
      - —
+     - QDX-VAT-067
+     - —
      - Draft
    * - QDX-SWE-068
      - BPCT timing, hardware and watchdog configu
      - QDX-SYS-004
      - QDX-QT-068
+     - —
+     - QDX-VAT-068
      - —
      - Draft
    * - QDX-SWE-069
@@ -3368,17 +3715,23 @@ matrix.
      - QDX-SYS-007
      - QDX-QT-069
      - —
+     - QDX-VAT-069
+     - —
      - Draft
    * - QDX-SWE-070
      - BPCT cross-designer timing dependency prop
      - QDX-SYS-008
      - QDX-QT-070
      - —
+     - QDX-VAT-070
+     - —
      - Draft
    * - QDX-SWE-071
-     - BPCT crypto and secure boot configuration 
+     - BPCT crypto and secure boot configuration
      - QDX-SYS-004
      - QDX-QT-071
+     - —
+     - QDX-VAT-071
      - —
      - Draft
    * - QDX-SWE-072
@@ -3386,11 +3739,15 @@ matrix.
      - QDX-SYS-007
      - QDX-QT-072
      - —
+     - QDX-VAT-072
+     - —
      - Draft
    * - QDX-SWE-073
      - BPCT key address placement validation (BD6
      - QDX-SYS-007
      - QDX-QT-073
+     - —
+     - QDX-VAT-073
      - —
      - Draft
    * - QDX-SWE-074
@@ -3398,17 +3755,23 @@ matrix.
      - QDX-SYS-020
      - QDX-QT-074
      - QDX-IT-013
+     - QDX-VAT-074
+     - —
      - Draft
    * - QDX-SWE-075
      - BPCT C header and Makefile generation
      - QDX-SYS-009
      - QDX-QT-075
      - QDX-IT-014
+     - QDX-VAT-075
+     - —
      - Draft
    * - QDX-SWE-076
      - BPCT output preview in BD1 designer
      - QDX-SYS-014
      - QDX-QT-076
+     - —
+     - QDX-VAT-076
      - —
      - Draft
    * - QDX-SWE-077
@@ -3416,17 +3779,23 @@ matrix.
      - QDX-SYS-016
      - QDX-QT-077
      - —
+     - QDX-VAT-077
+     - —
      - Draft
    * - QDX-SWE-078
      - AI-Assist context injection per domain
      - QDX-SYS-016
      - QDX-QT-078
      - QDX-IT-015
+     - QDX-VAT-078
+     - —
      - Draft
    * - QDX-SWE-079
      - AI-Assist OperationPlan scoped to active d
      - QDX-SYS-017
      - QDX-QT-079
+     - —
+     - QDX-VAT-079
      - —
      - Draft
    * - QDX-SWE-080
@@ -3434,23 +3803,31 @@ matrix.
      - QDX-SYS-016
      - QDX-QT-080
      - —
+     - QDX-VAT-080
+     - —
      - Draft
    * - QDX-SWE-081
      - LW-BSW project creation and ECU/DEXT impor
      - QDX-SYS-002
      - QDX-QT-081
      - QDX-IT-016
+     - QDX-VAT-081
+     - —
      - Draft
    * - QDX-SWE-082
      - LW-BSW module configuration — ten BSW modu
      - QDX-SYS-004
      - QDX-QT-082
      - —
+     - QDX-VAT-082
+     - —
      - Draft
    * - QDX-SWE-083
-     - LW-BSW CAN and optional LIN communication 
+     - LW-BSW CAN and optional LIN communication
      - QDX-SYS-004
      - QDX-QT-083
+     - —
+     - QDX-VAT-083
      - —
      - Draft
    * - QDX-SWE-084
@@ -3458,11 +3835,15 @@ matrix.
      - QDX-SYS-007
      - QDX-QT-084
      - —
+     - QDX-VAT-084
+     - —
      - Draft
    * - QDX-SWE-085
      - LW-BSW OS scheduling map and race conditio
      - QDX-SYS-007
      - QDX-QT-085
+     - —
+     - QDX-VAT-085
      - —
      - Draft
    * - QDX-SWE-086
@@ -3470,17 +3851,23 @@ matrix.
      - QDX-SYS-015
      - QDX-QT-086
      - —
+     - QDX-VAT-086
+     - —
      - Draft
    * - QDX-SWE-087
      - LW-BSW module configuration ``.h`` and ``.
      - QDX-SYS-009
      - QDX-QT-087
      - QDX-IT-017
+     - QDX-VAT-087
+     - —
      - Draft
    * - QDX-SWE-088
-     - LW-BSW bus-level compatibility check with 
+     - LW-BSW bus-level compatibility check with
      - QDX-SYS-007
      - QDX-QT-088
+     - —
+     - QDX-VAT-088
      - —
      - Draft
    * - QDX-SWE-089
@@ -3488,11 +3875,15 @@ matrix.
      - QDX-SYS-016
      - QDX-QT-089
      - QDX-IT-018
+     - QDX-VAT-089
+     - —
      - Draft
    * - QDX-SWE-090
      - LW-BSW ICC-2 conformance constraint enforc
      - QDX-SYS-006
      - QDX-QT-090
+     - —
+     - QDX-VAT-090
      - —
      - Draft
    * - QDX-SWE-091
@@ -3500,11 +3891,15 @@ matrix.
      - QDX-SYS-002
      - QDX-QT-091
      - QDX-IT-019
+     - QDX-VAT-091
+     - —
      - Draft
    * - QDX-SWE-092
      - Classic AUTOSAR — platform version selecti
      - QDX-SYS-002
      - QDX-QT-092
+     - —
+     - QDX-VAT-092
      - —
      - Draft
    * - QDX-SWE-093
@@ -3512,11 +3907,15 @@ matrix.
      - QDX-SYS-002
      - QDX-QT-093
      - —
+     - QDX-VAT-093
+     - —
      - Draft
    * - QDX-SWE-094
      - Classic AUTOSAR — project configuration st
      - QDX-SYS-002
      - QDX-QT-094
+     - —
+     - QDX-VAT-094
      - —
      - Draft
    * - QDX-SWE-095
@@ -3524,11 +3923,15 @@ matrix.
      - QDX-SYS-002
      - QDX-QT-095
      - —
+     - QDX-VAT-095
+     - —
      - Draft
    * - QDX-SWE-096
      - Adaptive AUTOSAR — project configuration s
      - QDX-SYS-002
      - QDX-QT-096
+     - —
+     - QDX-VAT-096
      - —
      - Draft
    * - QDX-SWE-097
@@ -3536,17 +3939,23 @@ matrix.
      - QDX-SYS-002
      - QDX-QT-097
      - —
+     - QDX-VAT-097
+     - —
      - Draft
    * - QDX-SWE-098
      - Bootloader (BPCT) — MCU and project config
      - QDX-SYS-002
      - QDX-QT-098
      - QDX-IT-020
+     - QDX-VAT-098
+     - —
      - Draft
    * - QDX-SWE-099
      - LW-BSW — project configuration step
      - QDX-SYS-002
      - QDX-QT-099
+     - —
+     - QDX-VAT-099
      - —
      - Draft
    * - QDX-SWE-100
@@ -3554,11 +3963,15 @@ matrix.
      - QDX-SYS-002
      - QDX-QT-100
      - QDX-IT-021
+     - QDX-VAT-100
+     - —
      - Draft
    * - QDX-SWE-101
      - Project creation — step navigation and per
      - QDX-SYS-002
      - QDX-QT-101
+     - —
+     - QDX-VAT-101
      - —
      - Draft
 

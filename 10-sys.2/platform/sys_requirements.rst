@@ -27,6 +27,16 @@ System Requirements Specification
      - TBD — Approval pending
    * - **ASPICE process**
      - SYS.2 — System Requirements Analysis
+   * - **Elicited by**
+     - SYS.1 — Requirements Elicitation (QDX-SER-001, in progress)
+   * - **Verified by**
+     - SYS.5 — System Verification (QDX-SYS5-DOC-001, in progress)
+   * - **Validated by**
+     - VAL.1 — Validation (QDX-VAL-001, in progress)
+   * - **Risk register**
+     - QDX-RMP-001 (in progress)
+   * - **Change authority**
+     - SUP.10 Change Request process — QDX-CRM-001 (in progress)
    * - **Jira epic**
      - QDX-EPIC-PLATFORM-SYSREQ
    * - **Git path**
@@ -109,6 +119,18 @@ of scope and belong to SWE.1/SWE.2 work products.
    * - Safety and security lead
      - Functional Safety / Cybersecurity Team
      - Reviews safety-, traceability- and security-relevant system behaviour
+   * - QA lead
+     - Qorix QA / Validation Team
+     - Owns SUP.1 quality assurance plan; verifies process compliance and
+       work product conformance at each ASPICE process stage
+   * - Risk owner
+     - Product Program Management
+     - Maintains MAN.5 risk register (QDX-RMP-001); reviews risk-tagged
+       requirements at each milestone
+   * - Change authority
+     - Architecture + Product Management
+     - Approves change requests (SUP.10) that modify baselined requirements;
+       ensures CR traceability is maintained in Jira
 
 
 3. Terms, Acronyms and Abbreviations
@@ -294,6 +316,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Qorix Developer is positioned as one environment across multiple middleware stacks.
    :verification: SYS.5 system test | Demonstration
    :jira: QDX-001
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-001 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-001 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** allow a user to create and manage a workspace containing one or more configuration projects for Classic, Adaptive, Bootloader and Performance stacks within the same application environment.
 
@@ -304,6 +329,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Standard project creation is required for repeatability and onboarding.
    :verification: SYS.5 system test | Inspection
    :jira: QDX-002
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-002 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-002 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** provide project creation templates that initialise the folder structure, mandatory metadata and default model files required for each supported stack type.
 
@@ -314,6 +342,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Human-readable configuration is a core product value and enables version-controlled parallel authoring.
    :verification: SYS.5 system test
    :jira: QDX-003
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-003 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-003 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** support text-based authoring of platform configuration models in the supported human-readable source formats defined by the product line.
 
@@ -324,6 +355,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Domain-specific designers are a key usability and product differentiation capability.
    :verification: Demonstration | SYS.5 system test
    :jira: QDX-004
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-004 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-004 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** provide domain-specific graphical designers for supported engineering domains and shall allow users to create, view and edit configuration content through those designers.
 
@@ -334,6 +368,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Users require seamless switching between graphical and textual authoring without data loss.
    :verification: SYS.5 system test
    :jira: QDX-005
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-005 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-005 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** keep designer-based and text-based representations of the same configuration model logically synchronized such that a valid user change in one representation is reflected in the other representation after save or refresh.
 
@@ -344,6 +381,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Early defect detection is a primary system objective.
    :verification: SYS.5 system test
    :jira: QDX-006
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-006 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-006 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** validate edited configuration content against the applicable syntax, schema and mandatory field rules before allowing a publish or generation action to complete successfully.
 
@@ -354,6 +394,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Schema-valid content can still be semantically invalid for engineering use.
    :verification: SYS.5 system test | Analysis
    :jira: QDX-007
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-007 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-007 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** detect and report semantic validation violations, including unresolved references, incompatible mappings, duplicate identifiers and missing mandatory cross-model relationships.
 
@@ -364,6 +407,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: The platform relies on sharded and multi-file model authoring.
    :verification: SYS.5 system test
    :jira: QDX-008
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-008 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-008 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** support references between configuration elements located in different files within the same workspace or project boundary where such references are defined by the supported data model.
 
@@ -374,6 +420,10 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Determinism is essential for traceability, safety-aligned development and CI use.
    :verification: Analysis | SYS.5 system test
    :jira: QDX-009
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-009 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-009 (VAL.1 — pending QDX-VAL-001)
+   :risk_id: QDX-RISK-001 (QDX-RMP-001)
 
    The system **SHALL** produce identical generated outputs for identical validated inputs, generation settings and tool version.
 
@@ -384,6 +434,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: External toolchain interoperability is mandatory for customer adoption.
    :verification: SYS.5 system test — interface conformance
    :jira: QDX-010
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-010 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-010 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** export supported Classic and Adaptive engineering models to AUTOSAR-compliant ARXML for the product versions and domains supported by the release.
 
@@ -394,6 +447,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Migration and coexistence with existing toolchains are required business capabilities.
    :verification: SYS.5 system test — interface conformance
    :jira: QDX-011
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-011 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-011 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** import supported external engineering artefacts into the Qorix Developer workspace and report any unsupported, lossy or ambiguous conversion conditions to the user.
 
@@ -404,6 +460,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Designers and extensions require consistent structured access to model data.
    :verification: SYS.5 system test — interface conformance
    :jira: QDX-012
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-012 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-012 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** expose structured access to configuration model data and mutations through a documented API contract suitable for use by internal components and approved extensions.
 
@@ -414,6 +473,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Fine-grained changes are needed for designer interactions and merge-friendly editing.
    :verification: SYS.5 system test
    :jira: QDX-013
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-013 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-013 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** support localized atomic modification of configuration models such that a change to one model element does not require unrelated model elements to be rewritten by the platform.
 
@@ -424,6 +486,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Usable validation requires actionable diagnostics.
    :verification: SYS.5 system test | Demonstration
    :jira: QDX-014
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-014 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-014 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** present validation and processing issues with severity, location and user-actionable diagnostic information.
 
@@ -434,6 +499,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Engineering outputs must be reviewable and attributable.
    :verification: Inspection | Analysis
    :jira: QDX-015
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-015 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-015 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** record generation provenance sufficient to identify the source workspace content, generation configuration and tool version used to produce a generated artefact.
 
@@ -444,6 +512,10 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: AI assistance is required, but recommendations must remain understandable and engineer-controlled.
    :verification: Demonstration | Inspection
    :jira: QDX-016
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-016 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-016 (VAL.1 — pending QDX-VAL-001)
+   :risk_id: QDX-RISK-002 (QDX-RMP-001)
 
    The system **SHALL** provide AI-assisted guidance, recommendation or content suggestion features together with an explanation or traceable basis for each user-visible recommendation.
 
@@ -454,6 +526,10 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Final engineering accountability must remain with the human user.
    :verification: SYS.5 system test
    :jira: QDX-017
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-017 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-017 (VAL.1 — pending QDX-VAL-001)
+   :risk_id: QDX-RISK-002 (QDX-RMP-001)
 
    The system **SHALL** require explicit user acceptance before any AI-originated suggestion is committed into the persistent project content.
 
@@ -464,6 +540,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Large workspaces require efficient discoverability.
    :verification: SYS.5 system test | Demonstration
    :jira: QDX-018
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-018 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-018 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** provide search and navigation functions that allow users to locate configuration elements, references, diagnostics and generated artefacts within a workspace.
 
@@ -474,6 +553,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Parallel authoring and review require merge-friendly project content.
    :verification: Inspection | Analysis
    :jira: QDX-019
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-019 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-019 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** persist project source content in a version-control-friendly form suitable for textual diff, review and merge workflows.
 
@@ -484,6 +566,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Multi-stack workspaces need whole-system checks beyond single-file validation.
    :verification: SYS.5 system test
    :jira: QDX-020
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-020 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-020 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** provide a workspace-level consistency check that evaluates all relevant projects and referenced configuration artefacts participating in a publish or release workflow.
 
@@ -494,6 +579,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Product evolution requires adding new designers and domains without redefining the whole platform.
    :verification: Analysis | Demonstration
    :jira: QDX-021
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-021 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-021 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** support extension-based addition of new domain-specific editors, validations or generators through controlled product extension mechanisms.
 
@@ -507,6 +595,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: The application must remain practical for daily engineering workflows.
    :verification: SYS.5 system test — performance measurement
    :jira: QDX-022
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-022 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-022 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** open a valid medium-sized workspace under nominal workstation conditions within 30 seconds.
 
@@ -517,6 +608,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Editing productivity depends on responsive feedback.
    :verification: SYS.5 system test — performance measurement
    :jira: QDX-023
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-023 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-023 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** present syntax and schema validation feedback for a single user edit within 2 seconds under nominal workstation conditions for a medium-sized file.
 
@@ -527,6 +621,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Search is a primary navigation activity in large workspaces.
    :verification: SYS.5 system test — performance measurement
    :jira: QDX-024
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-024 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-024 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** return search results for indexed workspace content within 5 seconds under nominal workstation conditions for a medium-sized workspace.
 
@@ -537,6 +634,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Generation must be practical for iterative engineering and CI usage.
    :verification: SYS.5 system test — performance measurement
    :jira: QDX-025
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-025 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-025 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** complete generation of supported release artefacts for a medium-sized validated project within 60 seconds under nominal workstation conditions.
 
@@ -547,6 +647,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Users must retain control and visibility during heavy operations.
    :verification: Demonstration | SYS.5 system test
    :jira: QDX-026
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-026 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-026 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** provide progress indication and cancellation support for user-initiated operations that exceed 5 seconds of execution time.
 
@@ -560,6 +663,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Product strategy requires operation within supported IDE ecosystems.
    :verification: SYS.5 system test — interface conformance
    :jira: QDX-027
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-027 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-027 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** provide integration with supported IDE host environments used by the product release, including extension activation, project access and editor contribution behaviour.
 
@@ -570,6 +676,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Structured model access is a platform backbone for designers and services.
    :verification: SYS.5 system test — interface conformance
    :jira: QDX-028
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-028 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-028 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** expose model query and mutation operations through a versioned API contract with documented request and response semantics.
 
@@ -580,6 +689,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Text-based editing requires standard editing assistance integration.
    :verification: SYS.5 system test — interface conformance
    :jira: QDX-029
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-029 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-029 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** provide language-service-backed diagnostics and editing assistance for supported text-based model formats within the integrated editor experience.
 
@@ -590,6 +702,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Interoperability limitations must be visible during customer migration scenarios.
    :verification: SYS.5 system test | Inspection
    :jira: QDX-030
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-030 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-030 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** report the target standard version and compatibility status associated with each imported or exported supported external artefact.
 
@@ -600,6 +715,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Automated validation and generation are required for product integration workflows.
    :verification: Demonstration | SYS.5 system test
    :jira: QDX-031
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-031 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-031 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** provide a non-interactive execution mode or equivalent automation interface suitable for CI/CD-triggered validation and generation workflows.
 
@@ -613,6 +731,10 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Safety-aligned engineering requires reproducible outputs and predictable processing.
    :verification: Analysis | SYS.5 test
    :jira: QDX-032
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-032 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-032 (VAL.1 — pending QDX-VAL-001)
+   :risk_id: QDX-RISK-003 (QDX-RMP-001)
 
    The system **SHALL** ensure that safety-relevant generation and validation workflows are deterministic with respect to validated input content, configuration and released tool version.
 
@@ -623,6 +745,10 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Project data must not be silently corrupted or overwritten.
    :verification: SYS.5 system test | Analysis
    :jira: QDX-033
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-033 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-033 (VAL.1 — pending QDX-VAL-001)
+   :risk_id: QDX-RISK-004 (QDX-RMP-001)
 
    The system **SHALL** protect persisted project content against partial write corruption by using an atomic save or equivalent integrity-preserving persistence mechanism.
 
@@ -633,6 +759,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Certain actions such as publication, extension management or remote AI usage may require controlled access.
    :verification: SYS.5 system test | Inspection
    :jira: QDX-034
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-034 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-034 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** enforce authentication or authorization controls for privileged operations where such controls are configured for the deployment.
 
@@ -643,6 +772,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Traceability and compliance require reconstructable action history.
    :verification: Inspection | Analysis
    :jira: QDX-035
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-035 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-035 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** record auditable events for user-visible critical actions including generation, publication, import and acceptance of AI-originated changes.
 
@@ -653,6 +785,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Invalid inputs shall not lead to silent generation of misleading outputs.
    :verification: SYS.5 system test
    :jira: QDX-036
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-036 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-036 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** prevent successful publication of an artefact when blocking validation errors remain unresolved.
 
@@ -663,6 +798,10 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Enterprise AI usage requires bounded data exposure.
    :verification: Inspection | Analysis
    :jira: QDX-037
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-037 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-037 (VAL.1 — pending QDX-VAL-001)
+   :risk_id: QDX-RISK-002 (QDX-RMP-001)
 
    The system **SHALL** provide deployment-configurable controls governing whether project content may be transmitted to an external AI service.
 
@@ -676,6 +815,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Engineers must be able to understand produced outputs and decisions.
    :verification: Analysis | Demonstration
    :jira: QDX-038
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-038 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-038 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** provide sufficient traceability from generated outputs back to source model elements and generation context to support engineering review.
 
@@ -686,6 +828,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Cross-platform availability is required for broad engineering adoption.
    :verification: Demonstration | Inspection
    :jira: QDX-039
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-039 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-039 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** support execution in each host environment declared as supported by the released product baseline.
 
@@ -696,6 +841,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Upgrades must not unnecessarily break existing workspaces.
    :verification: SYS.5 system test | Analysis
    :jira: QDX-040
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-040 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-040 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** provide a defined migration or compatibility mechanism for project content created by earlier supported product versions.
 
@@ -706,6 +854,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: New domains and customer-specific capabilities should be addable without destabilising the core platform.
    :verification: Analysis | Demonstration
    :jira: QDX-041
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-041 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-041 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** allow supported extensions to add editors, validations or generation capabilities without requiring modification of the released core product for each extension instance.
 
@@ -716,6 +867,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Diagnostics must reduce engineering effort rather than merely signal failure.
    :verification: Demonstration | Inspection
    :jira: QDX-042
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-042 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-042 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** present blocking and non-blocking issues using terminology understandable by the intended engineering audience and shall associate issues with the affected model context.
 
@@ -726,6 +880,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Core engineering work shall remain possible in restricted environments.
    :verification: SYS.5 system test
    :jira: QDX-043
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-043 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-043 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** support local authoring, local validation and local viewing of project content without requiring continuous network connectivity, except for explicitly remote-backed functions.
 
@@ -736,6 +893,9 @@ The following pre-agreed interfaces constrain the system design space:
    :rationale: Clean engineering workflows require separation of editable source from derived outputs.
    :verification: Inspection | SYS.5 system test
    :jira: QDX-044
+   :elicited_from: QDX-SER-001 — Stakeholder Requirements (SYS.1)
+   :sys_arch: QDX-SYS3-SP-044 (SYS.3 — pending QDX-SYS3-DOC-001)
+   :val_test: QDX-VAT-044 (VAL.1 — pending QDX-VAL-001)
 
    The system **SHALL** maintain a clear separation between user-authored source content and generated output content within the project structure or output configuration.
 

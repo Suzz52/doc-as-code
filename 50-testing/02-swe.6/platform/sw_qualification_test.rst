@@ -29,6 +29,10 @@ Software Qualification Test Specification
      - SWE.6 — Software Qualification Test
    * - **Parent SWE.1 doc**
      - :ref:`sw_requirements` (QDX-SWE-DOC-001)
+   * - **Companion SYS.5 doc**
+     - QDX-SYS5-DOC-001 — System Verification Specification (SYS.5, in progress)
+   * - **Companion VAL.1 doc**
+     - QDX-VAL-001 — Validation Plan and Test Records (VAL.1, in progress)
    * - **Jira epic**
      - QDX-EPIC-PLATFORM-SWE6
    * - **Git path**
@@ -171,10 +175,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-001 (parent: QDX-SYS-001)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-001
+   * - **SYS.2 req**
+     - QDX-SYS-001
+   * - **VAL.1 val. test**
+     - QDX-VAT-001 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -195,10 +201,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-002 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-002
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-002 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -219,10 +227,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-003 (parent: QDX-SYS-044)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-003
+   * - **SYS.2 req**
+     - QDX-SYS-044
+   * - **VAL.1 val. test**
+     - QDX-VAT-003 (pending QDX-VAL-001)
    * - **Approach**
      - Inspection — review configuration files, YAML content, or generated artefact structure
    * - **Test steps**
@@ -243,10 +253,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-004 (parent: QDX-SYS-019)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-004
+   * - **SYS.2 req**
+     - QDX-SYS-019
+   * - **VAL.1 val. test**
+     - QDX-VAT-004 (pending QDX-VAL-001)
    * - **Approach**
      - Inspection — review configuration files, YAML content, or generated artefact structure
    * - **Test steps**
@@ -267,10 +279,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-005 (parent: QDX-SYS-033)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-005
+   * - **SYS.2 req**
+     - QDX-SYS-033
+   * - **VAL.1 val. test**
+     - QDX-VAT-005 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -295,10 +309,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-006 (parent: QDX-SYS-003)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-006
+   * - **SYS.2 req**
+     - QDX-SYS-003
+   * - **VAL.1 val. test**
+     - QDX-VAT-006 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -319,10 +335,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-007 (parent: QDX-SYS-029)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-007
+   * - **SYS.2 req**
+     - QDX-SYS-029
+   * - **VAL.1 val. test**
+     - QDX-VAT-007 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -343,10 +361,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-008 (parent: QDX-SYS-013)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-008
+   * - **SYS.2 req**
+     - QDX-SYS-013
+   * - **VAL.1 val. test**
+     - QDX-VAT-008 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -371,10 +391,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-009 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-009
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-009 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -395,10 +417,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-010 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-010
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-010 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -419,10 +443,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-011 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-011
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-011 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -443,10 +469,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-012 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-012
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-012 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -467,10 +495,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-013 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-013
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-013 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -491,10 +521,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-014 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-014
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-014 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -515,10 +547,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-015 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-015
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-015 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -539,10 +573,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-016 (parent: QDX-SYS-007)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-016
+   * - **SYS.2 req**
+     - QDX-SYS-007
+   * - **VAL.1 val. test**
+     - QDX-VAT-016 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -567,10 +603,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-017 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-017
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-017 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -591,10 +629,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-018 (parent: QDX-SYS-008)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-018
+   * - **SYS.2 req**
+     - QDX-SYS-008
+   * - **VAL.1 val. test**
+     - QDX-VAT-018 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -615,10 +655,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-019 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-019
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-019 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -639,10 +681,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-020 (parent: QDX-SYS-007)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-020
+   * - **SYS.2 req**
+     - QDX-SYS-007
+   * - **VAL.1 val. test**
+     - QDX-VAT-020 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -663,10 +707,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-021 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-021
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-021 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -687,10 +733,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-022 (parent: QDX-SYS-007)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-022
+   * - **SYS.2 req**
+     - QDX-SYS-007
+   * - **VAL.1 val. test**
+     - QDX-VAT-022 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -711,10 +759,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-023 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-023
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-023 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -735,10 +785,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-024 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-024
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-024 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -759,10 +811,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-025 (parent: QDX-SYS-007)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-025
+   * - **SYS.2 req**
+     - QDX-SYS-007
+   * - **VAL.1 val. test**
+     - QDX-VAT-025 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -783,10 +837,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-026 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-026
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-026 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -807,10 +863,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-027 (parent: QDX-SYS-007)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-027
+   * - **SYS.2 req**
+     - QDX-SYS-007
+   * - **VAL.1 val. test**
+     - QDX-VAT-027 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -831,10 +889,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-028 (parent: QDX-SYS-020)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-028
+   * - **SYS.2 req**
+     - QDX-SYS-020
+   * - **VAL.1 val. test**
+     - QDX-VAT-028 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -859,10 +919,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-029 (parent: QDX-SYS-005)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-029
+   * - **SYS.2 req**
+     - QDX-SYS-005
+   * - **VAL.1 val. test**
+     - QDX-VAT-029 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -883,10 +945,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-030 (parent: QDX-SYS-005)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-030
+   * - **SYS.2 req**
+     - QDX-SYS-005
+   * - **VAL.1 val. test**
+     - QDX-VAT-030 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -907,10 +971,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-031 (parent: QDX-SYS-006)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-031
+   * - **SYS.2 req**
+     - QDX-SYS-006
+   * - **VAL.1 val. test**
+     - QDX-VAT-031 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -931,10 +997,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-032 (parent: QDX-SYS-007)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-032
+   * - **SYS.2 req**
+     - QDX-SYS-007
+   * - **VAL.1 val. test**
+     - QDX-VAT-032 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -955,10 +1023,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-033 (parent: QDX-SYS-008)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-033
+   * - **SYS.2 req**
+     - QDX-SYS-008
+   * - **VAL.1 val. test**
+     - QDX-VAT-033 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -979,10 +1049,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-034 (parent: QDX-SYS-036)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-034
+   * - **SYS.2 req**
+     - QDX-SYS-036
+   * - **VAL.1 val. test**
+     - QDX-VAT-034 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1003,10 +1075,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-035 (parent: QDX-SYS-020)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-035
+   * - **SYS.2 req**
+     - QDX-SYS-020
+   * - **VAL.1 val. test**
+     - QDX-VAT-035 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1027,10 +1101,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-036 (parent: QDX-SYS-014)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-036
+   * - **SYS.2 req**
+     - QDX-SYS-014
+   * - **VAL.1 val. test**
+     - QDX-VAT-036 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -1051,10 +1127,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-037 (parent: QDX-SYS-042)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-037
+   * - **SYS.2 req**
+     - QDX-SYS-042
+   * - **VAL.1 val. test**
+     - QDX-VAT-037 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -1079,10 +1157,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-038 (parent: QDX-SYS-009)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-038
+   * - **SYS.2 req**
+     - QDX-SYS-009
+   * - **VAL.1 val. test**
+     - QDX-VAT-038 (pending QDX-VAL-001)
    * - **Approach**
      - Analysis — static review of implementation and SWE.3 specification
    * - **Test steps**
@@ -1103,10 +1183,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-039 (parent: QDX-SYS-010)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-039
+   * - **SYS.2 req**
+     - QDX-SYS-010
+   * - **VAL.1 val. test**
+     - QDX-VAT-039 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1127,10 +1209,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-040 (parent: QDX-SYS-011)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-040
+   * - **SYS.2 req**
+     - QDX-SYS-011
+   * - **VAL.1 val. test**
+     - QDX-VAT-040 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1151,10 +1235,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-041 (parent: QDX-SYS-015)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-041
+   * - **SYS.2 req**
+     - QDX-SYS-015
+   * - **VAL.1 val. test**
+     - QDX-VAT-041 (pending QDX-VAL-001)
    * - **Approach**
      - Inspection — review configuration files, YAML content, or generated artefact structure
    * - **Test steps**
@@ -1175,10 +1261,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-042 (parent: QDX-SYS-030)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-042
+   * - **SYS.2 req**
+     - QDX-SYS-030
+   * - **VAL.1 val. test**
+     - QDX-VAT-042 (pending QDX-VAL-001)
    * - **Approach**
      - Inspection — review configuration files, YAML content, or generated artefact structure
    * - **Test steps**
@@ -1199,10 +1287,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-043 (parent: QDX-SYS-012)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-043
+   * - **SYS.2 req**
+     - QDX-SYS-012
+   * - **VAL.1 val. test**
+     - QDX-VAT-043 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1223,10 +1313,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-044 (parent: QDX-SYS-018)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-044
+   * - **SYS.2 req**
+     - QDX-SYS-018
+   * - **VAL.1 val. test**
+     - QDX-VAT-044 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1247,10 +1339,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-045 (parent: QDX-SYS-031)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-045
+   * - **SYS.2 req**
+     - QDX-SYS-031
+   * - **VAL.1 val. test**
+     - QDX-VAT-045 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -1271,10 +1365,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-046 (parent: QDX-SYS-031)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-046
+   * - **SYS.2 req**
+     - QDX-SYS-031
+   * - **VAL.1 val. test**
+     - QDX-VAT-046 (pending QDX-VAL-001)
    * - **Approach**
      - Inspection — review configuration files, YAML content, or generated artefact structure
    * - **Test steps**
@@ -1299,10 +1395,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-047 (parent: QDX-SYS-016)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-047
+   * - **SYS.2 req**
+     - QDX-SYS-016
+   * - **VAL.1 val. test**
+     - QDX-VAT-047 (pending QDX-VAL-001)
    * - **Approach**
      - Inspection — review configuration files, YAML content, or generated artefact structure
    * - **Test steps**
@@ -1323,10 +1421,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-048 (parent: QDX-SYS-017)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-048
+   * - **SYS.2 req**
+     - QDX-SYS-017
+   * - **VAL.1 val. test**
+     - QDX-VAT-048 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1347,10 +1447,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-049 (parent: QDX-SYS-006)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-049
+   * - **SYS.2 req**
+     - QDX-SYS-006
+   * - **VAL.1 val. test**
+     - QDX-VAT-049 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1371,10 +1473,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-050 (parent: QDX-SYS-016)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-050
+   * - **SYS.2 req**
+     - QDX-SYS-016
+   * - **VAL.1 val. test**
+     - QDX-VAT-050 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1395,10 +1499,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-051 (parent: QDX-SYS-037)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-051
+   * - **SYS.2 req**
+     - QDX-SYS-037
+   * - **VAL.1 val. test**
+     - QDX-VAT-051 (pending QDX-VAL-001)
    * - **Approach**
      - Inspection — review configuration files, YAML content, or generated artefact structure
    * - **Test steps**
@@ -1419,10 +1525,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-052 (parent: QDX-SYS-035)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-052
+   * - **SYS.2 req**
+     - QDX-SYS-035
+   * - **VAL.1 val. test**
+     - QDX-VAT-052 (pending QDX-VAL-001)
    * - **Approach**
      - Inspection — review configuration files, YAML content, or generated artefact structure
    * - **Test steps**
@@ -1443,10 +1551,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-053 (parent: QDX-SYS-034)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-053
+   * - **SYS.2 req**
+     - QDX-SYS-034
+   * - **VAL.1 val. test**
+     - QDX-VAT-053 (pending QDX-VAL-001)
    * - **Approach**
      - Inspection — review configuration files, YAML content, or generated artefact structure
    * - **Test steps**
@@ -1471,10 +1581,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-054 (parent: QDX-SYS-022)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-054
+   * - **SYS.2 req**
+     - QDX-SYS-022
+   * - **VAL.1 val. test**
+     - QDX-VAT-054 (pending QDX-VAL-001)
    * - **Approach**
      - Performance measurement — timed execution, compare to numerical threshold
    * - **Test steps**
@@ -1495,10 +1607,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-055 (parent: QDX-SYS-023)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-055
+   * - **SYS.2 req**
+     - QDX-SYS-023
+   * - **VAL.1 val. test**
+     - QDX-VAT-055 (pending QDX-VAL-001)
    * - **Approach**
      - Performance measurement — timed execution, compare to numerical threshold
    * - **Test steps**
@@ -1519,10 +1633,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-056 (parent: QDX-SYS-024)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-056
+   * - **SYS.2 req**
+     - QDX-SYS-024
+   * - **VAL.1 val. test**
+     - QDX-VAT-056 (pending QDX-VAL-001)
    * - **Approach**
      - Performance measurement — timed execution, compare to numerical threshold
    * - **Test steps**
@@ -1543,10 +1659,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-057 (parent: QDX-SYS-025)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-057
+   * - **SYS.2 req**
+     - QDX-SYS-025
+   * - **VAL.1 val. test**
+     - QDX-VAT-057 (pending QDX-VAL-001)
    * - **Approach**
      - Performance measurement — timed execution, compare to numerical threshold
    * - **Test steps**
@@ -1567,10 +1685,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-058 (parent: QDX-SYS-026)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-058
+   * - **SYS.2 req**
+     - QDX-SYS-026
+   * - **VAL.1 val. test**
+     - QDX-VAT-058 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -1595,10 +1715,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-059 (parent: QDX-SYS-027)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-059
+   * - **SYS.2 req**
+     - QDX-SYS-027
+   * - **VAL.1 val. test**
+     - QDX-VAT-059 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1619,10 +1741,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-060 (parent: QDX-SYS-043)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-060
+   * - **SYS.2 req**
+     - QDX-SYS-043
+   * - **VAL.1 val. test**
+     - QDX-VAT-060 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1643,10 +1767,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-061 (parent: QDX-SYS-041)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-061
+   * - **SYS.2 req**
+     - QDX-SYS-041
+   * - **VAL.1 val. test**
+     - QDX-VAT-061 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -1667,10 +1793,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-062 (parent: QDX-SYS-040)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-062
+   * - **SYS.2 req**
+     - QDX-SYS-040
+   * - **VAL.1 val. test**
+     - QDX-VAT-062 (pending QDX-VAL-001)
    * - **Approach**
      - Analysis — static review of implementation and SWE.3 specification
    * - **Test steps**
@@ -1695,10 +1823,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-063 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-063
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-063 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -1719,10 +1849,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-064 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-064
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-064 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -1743,10 +1875,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-065 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-065
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-065 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -1767,10 +1901,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-066 (parent: QDX-SYS-007)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-066
+   * - **SYS.2 req**
+     - QDX-SYS-007
+   * - **VAL.1 val. test**
+     - QDX-VAT-066 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1791,10 +1927,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-067 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-067
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-067 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -1815,10 +1953,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-068 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-068
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-068 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -1839,10 +1979,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-069 (parent: QDX-SYS-007)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-069
+   * - **SYS.2 req**
+     - QDX-SYS-007
+   * - **VAL.1 val. test**
+     - QDX-VAT-069 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1863,10 +2005,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-070 (parent: QDX-SYS-008)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-070
+   * - **SYS.2 req**
+     - QDX-SYS-008
+   * - **VAL.1 val. test**
+     - QDX-VAT-070 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1887,10 +2031,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-071 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-071
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-071 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -1911,10 +2057,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-072 (parent: QDX-SYS-007)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-072
+   * - **SYS.2 req**
+     - QDX-SYS-007
+   * - **VAL.1 val. test**
+     - QDX-VAT-072 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1935,10 +2083,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-073 (parent: QDX-SYS-007)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-073
+   * - **SYS.2 req**
+     - QDX-SYS-007
+   * - **VAL.1 val. test**
+     - QDX-VAT-073 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1959,10 +2109,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-074 (parent: QDX-SYS-020)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-074
+   * - **SYS.2 req**
+     - QDX-SYS-020
+   * - **VAL.1 val. test**
+     - QDX-VAT-074 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -1983,10 +2135,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-075 (parent: QDX-SYS-009)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-075
+   * - **SYS.2 req**
+     - QDX-SYS-009
+   * - **VAL.1 val. test**
+     - QDX-VAT-075 (pending QDX-VAL-001)
    * - **Approach**
      - Analysis — static review of implementation and SWE.3 specification
    * - **Test steps**
@@ -2007,10 +2161,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-076 (parent: QDX-SYS-014)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-076
+   * - **SYS.2 req**
+     - QDX-SYS-014
+   * - **VAL.1 val. test**
+     - QDX-VAT-076 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -2035,10 +2191,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-077 (parent: QDX-SYS-016)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-077
+   * - **SYS.2 req**
+     - QDX-SYS-016
+   * - **VAL.1 val. test**
+     - QDX-VAT-077 (pending QDX-VAL-001)
    * - **Approach**
      - Inspection — review configuration files, YAML content, or generated artefact structure
    * - **Test steps**
@@ -2059,10 +2217,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-078 (parent: QDX-SYS-016)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-078
+   * - **SYS.2 req**
+     - QDX-SYS-016
+   * - **VAL.1 val. test**
+     - QDX-VAT-078 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -2083,10 +2243,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-079 (parent: QDX-SYS-017)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-079
+   * - **SYS.2 req**
+     - QDX-SYS-017
+   * - **VAL.1 val. test**
+     - QDX-VAT-079 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -2107,10 +2269,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-080 (parent: QDX-SYS-016)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-080
+   * - **SYS.2 req**
+     - QDX-SYS-016
+   * - **VAL.1 val. test**
+     - QDX-VAT-080 (pending QDX-VAL-001)
    * - **Approach**
      - Inspection — review configuration files, YAML content, or generated artefact structure
    * - **Test steps**
@@ -2135,10 +2299,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-081 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-081
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-081 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -2159,10 +2325,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-082 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-082
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-082 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -2183,10 +2351,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-083 (parent: QDX-SYS-004)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-083
+   * - **SYS.2 req**
+     - QDX-SYS-004
+   * - **VAL.1 val. test**
+     - QDX-VAT-083 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -2207,10 +2377,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-084 (parent: QDX-SYS-007)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-084
+   * - **SYS.2 req**
+     - QDX-SYS-007
+   * - **VAL.1 val. test**
+     - QDX-VAT-084 (pending QDX-VAL-001)
    * - **Approach**
      - Analysis — static review of implementation and SWE.3 specification
    * - **Test steps**
@@ -2231,10 +2403,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-085 (parent: QDX-SYS-007)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-085
+   * - **SYS.2 req**
+     - QDX-SYS-007
+   * - **VAL.1 val. test**
+     - QDX-VAT-085 (pending QDX-VAL-001)
    * - **Approach**
      - Analysis — static review of implementation and SWE.3 specification
    * - **Test steps**
@@ -2255,10 +2429,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-086 (parent: QDX-SYS-015)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-086
+   * - **SYS.2 req**
+     - QDX-SYS-015
+   * - **VAL.1 val. test**
+     - QDX-VAT-086 (pending QDX-VAL-001)
    * - **Approach**
      - Inspection — review configuration files, YAML content, or generated artefact structure
    * - **Test steps**
@@ -2279,10 +2455,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-087 (parent: QDX-SYS-009)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-087
+   * - **SYS.2 req**
+     - QDX-SYS-009
+   * - **VAL.1 val. test**
+     - QDX-VAT-087 (pending QDX-VAL-001)
    * - **Approach**
      - Analysis — static review of implementation and SWE.3 specification
    * - **Test steps**
@@ -2303,10 +2481,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-088 (parent: QDX-SYS-007)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-088
+   * - **SYS.2 req**
+     - QDX-SYS-007
+   * - **VAL.1 val. test**
+     - QDX-VAT-088 (pending QDX-VAL-001)
    * - **Approach**
      - Analysis — static review of implementation and SWE.3 specification
    * - **Test steps**
@@ -2327,10 +2507,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-089 (parent: QDX-SYS-016)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-089
+   * - **SYS.2 req**
+     - QDX-SYS-016
+   * - **VAL.1 val. test**
+     - QDX-VAT-089 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -2351,10 +2533,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-090 (parent: QDX-SYS-006)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-090
+   * - **SYS.2 req**
+     - QDX-SYS-006
+   * - **VAL.1 val. test**
+     - QDX-VAT-090 (pending QDX-VAL-001)
    * - **Approach**
      - Inspection — review configuration files, YAML content, or generated artefact structure
    * - **Test steps**
@@ -2379,10 +2563,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-091 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-091
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-091 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -2404,10 +2590,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-092 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-092
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-092 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -2429,10 +2617,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-093 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-093
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-093 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -2454,10 +2644,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-094 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-094
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-094 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -2479,10 +2671,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-095 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-095
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-095 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -2504,10 +2698,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-096 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-096
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-096 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -2529,10 +2725,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-097 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-097
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-097 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -2554,10 +2752,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-098 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-098
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-098 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -2579,10 +2779,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-099 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-099
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-099 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -2604,10 +2806,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-100 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-100
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-100 (pending QDX-VAL-001)
    * - **Approach**
      - Functional demonstration — operate the feature and verify observable output
    * - **Test steps**
@@ -2629,10 +2833,12 @@ Each test case carries one of: **PASS** — requirement verified.
 
 .. list-table::
    :widths: 20 80
-   :header-rows: 0
-
-   * - **Traces to**
-     - QDX-SWE-101 (parent: QDX-SYS-002)
+   :header-rows: 0   * - **Traces to (SWE.1)**
+     - QDX-SWE-101
+   * - **SYS.2 req**
+     - QDX-SYS-002
+   * - **VAL.1 val. test**
+     - QDX-VAT-101 (pending QDX-VAL-001)
    * - **Approach**
      - Functional test — exercise the feature and verify the software requirement is met
    * - **Test steps**
@@ -2692,26 +2898,33 @@ For each test cycle, the following log is completed per test case:
 ========================
 
 .. list-table::
-   :widths: 20 20 20 20 20
+   :widths: 17 17 17 17 16 16
    :header-rows: 1
 
    * - SWE.1 total
      - SWE.6 total
      - SWE.4 UT total
      - SWE.5 IT total
-     - Coverage
+     - VAL.1 val. tests
+     - SWE.6 coverage
    * - 101 requirements
      - 101 test cases
      - 79 unit tests
      - 21 integration tests
+     - 101 planned (QDX-VAT-001..101, pending QDX-VAL-001)
      - 100% SWE.1 coverage
 
 Every ``QDX-SWE-NNN`` requirement has exactly one ``QDX-QT-NNN``
-qualification test. Every qualification test traces back to its
-parent ``QDX-SWE-NNN`` and the parent system requirement
-``QDX-SYS-NNN``. The full chain from system requirement through
-software requirement to qualification test is documented in the
-SWE.1 traceability matrix.
+qualification test (SWE.6) and one planned ``QDX-VAT-NNN`` validation
+test (VAL.1). Every qualification test traces to its parent
+``QDX-SWE-NNN`` software requirement and the grandparent system
+requirement ``QDX-SYS-NNN``. SWE.6 verifies that the software is built
+correctly against SWE.1 requirements. VAL.1 verifies that the right
+software was built — i.e. that it satisfies actual stakeholder needs
+in representative operational conditions. Both chains are required for
+full ASPICE V-cycle closure. See ``QDX-VAL-001`` (in progress) for the
+VAL.1 validation plan and ``QDX-SYS5-DOC-001`` (in progress) for the
+SYS.5 system verification specification.
 
 
 6. Open Issues

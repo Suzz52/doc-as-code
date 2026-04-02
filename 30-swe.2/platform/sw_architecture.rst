@@ -3,6 +3,8 @@
 .. ASPICE: SWE.2
 .. Derived from: QDX-SWE-DOC-001 (SWE.1), Qorix Developer
 ..               C4 Architecture (L1–L3 + Data Flow)
+.. Constrained by: QDX-SYS3-DOC-001 (SYS.3, in progress)
+.. Validated by: QDX-VAL-001 (VAL.1, in progress)
 .. ============================================================
 
 .. _sw_architecture:
@@ -33,6 +35,10 @@ Software Architecture Description
      - SWE.2 — Software Architectural Design
    * - **Parent SWE doc**
      - :ref:`sw_requirements` (QDX-SWE-DOC-001)
+   * - **Parent SYS.3 doc**
+     - QDX-SYS3-DOC-001 — System Architecture Description (SYS.3, in progress)
+   * - **Validated by**
+     - VAL.1 — Validation (QDX-VAL-001, in progress)
    * - **Jira epic**
      - QDX-EPIC-PLATFORM-SWEARCH
    * - **Git path**
@@ -787,6 +793,7 @@ ADRs are never deleted — superseded decisions are marked Superseded.
    * - QDX-ADR-003
      - Rust domain crates have zero JVM / ARTOP / EMF dependency
      - Accepted
+     - :cr_id: —
      - Enables WASM and CLI compilation without a JVM runtime.
        Decouples ARTOP version upgrades from Rust build.
        Consequence: ``core::gql_client`` is the only path to
@@ -795,6 +802,7 @@ ADRs are never deleted — superseded decisions are marked Superseded.
    * - QDX-ADR-004
      - The Qorix Agent never writes to a YAML file directly
      - Accepted
+     - :cr_id: —
      - Preserves engineer accountability for all configuration
        changes in safety-relevant automotive contexts. AI
        suggestions are OperationPlans presented for review;
@@ -833,6 +841,7 @@ ADRs are never deleted — superseded decisions are marked Superseded.
    * - QDX-ADR-008
      - Atomic YAML save (write-to-temp then rename)
      - Accepted
+     - :cr_id: —
      - Prevents partial-write corruption of YAML source files if
        the process is interrupted during a save operation.
        Consequence: all file persistence in the platform must
@@ -963,48 +972,68 @@ OperationPlan acceptance and import events (QDX-SWE-052).
 =====================================
 
 .. note::
-   Maps each architectural element to the SWE.1 software requirements
-   it realises and the SWE.5 integration tests that verify the
-   interfaces between subsystems.
+   Maps each architectural element to the SYS.2 system requirements and
+   SWE.1 software requirements it realises, the SWE.5 integration tests
+   that verify subsystem interfaces, and the SYS.4 system integration
+   tests that verify end-to-end system boundaries
+   (QDX-SYS4-DOC-001, in progress).
 
 .. list-table::
-   :widths: 22 42 20 16
+   :widths: 20 14 28 14 14 10
    :header-rows: 1
 
    * - Architectural element
+     - SYS.2 req
      - Realises SW requirements (SWE.1)
-     - SWE.5 integration test
+     - SWE.5 integ. test
+     - SYS.4 sys. integ. test
      - Status
    * - IDE Layer — YAML Editor + LSP
+     - QDX-SYS-003
      - QDX-SWE-006, QDX-SWE-007, QDX-SWE-008
      - QDX-IT-001
+     - —
      - Draft
    * - IDE Layer — Visual Designers (C1–C6)
+     - QDX-SYS-004
      - QDX-SWE-009 through QDX-SWE-016
+     - —
      - —
      - Draft
    * - IDE Layer — Visual Designers (A1–A6)
+     - QDX-SYS-004
      - QDX-SWE-017 through QDX-SWE-028
      - QDX-IT-011, QDX-IT-012
+     - —
      - Draft
    * - IDE Layer — Visual Designers (BD1–BD6)
+     - QDX-SYS-004
      - QDX-SWE-063 through QDX-SWE-076
      - QDX-IT-013, QDX-IT-014
+     - —
      - Draft
    * - IDE Layer — Command Bus
+     - QDX-SYS-013
      - QDX-SWE-008, QDX-SWE-029, QDX-SWE-030
      - QDX-IT-002
+     - —
      - Draft
    * - IDE Layer — WASM Bridge
+     - QDX-SYS-006
      - QDX-SWE-031, QDX-SWE-049, QDX-SWE-055, QDX-SWE-060
      - QDX-IT-003
+     - —
      - Draft
    * - IDE Layer — Domain Service Client
+     - QDX-SYS-007
      - QDX-SWE-032, QDX-SWE-033, QDX-SWE-035, QDX-SWE-044
      - QDX-IT-004, QDX-IT-005
+     - —
      - Draft
    * - IDE Layer — Diagnostics Panel
+     - QDX-SYS-014
      - QDX-SWE-036, QDX-SWE-037
+     - —
      - —
      - Draft
    * - IDE Layer — AI Chat Panel
@@ -1013,15 +1042,21 @@ OperationPlan acceptance and import events (QDX-SWE-052).
      - QDX-IT-010, QDX-IT-015
      - Draft
    * - IDE Layer — Project Creation Wizard
+     - QDX-SYS-002
      - QDX-SWE-091 through QDX-SWE-101
      - QDX-IT-019, QDX-IT-021
+     - —
      - Draft
    * - Rust Domain Platform — core::model
+     - QDX-SYS-009
      - QDX-SWE-001, QDX-SWE-003, QDX-SWE-004
+     - —
      - —
      - Draft
    * - Rust Domain Platform — core::yaml
+     - QDX-SYS-019
      - QDX-SWE-004, QDX-SWE-005, QDX-SWE-008
+     - —
      - —
      - Draft
    * - Rust Domain Platform — core::validation
@@ -1030,28 +1065,40 @@ OperationPlan acceptance and import events (QDX-SWE-052).
      - QDX-IT-003, QDX-IT-004
      - Draft
    * - Rust Domain Platform — core::ops
+     - QDX-SYS-013
      - QDX-SWE-008, QDX-SWE-013
+     - —
      - —
      - Draft
    * - Rust Domain Platform — core::gql_client
+     - QDX-SYS-012
      - QDX-SWE-039, QDX-SWE-043
      - QDX-IT-007, QDX-IT-008
+     - —
      - Draft
    * - Rust Domain Platform — core::migration
+     - QDX-SYS-011
      - QDX-SWE-040, QDX-SWE-062
      - QDX-IT-007
+     - —
      - Draft
    * - Rust Domain Platform — classic::* crates
+     - QDX-SYS-004
      - QDX-SWE-009 through QDX-SWE-016, QDX-SWE-038
      - QDX-IT-006
+     - —
      - Draft
    * - Rust Domain Platform — adaptive::* crates
+     - QDX-SYS-004
      - QDX-SWE-017 through QDX-SWE-028, QDX-SWE-038
      - QDX-IT-006, QDX-IT-011, QDX-IT-012
+     - —
      - Draft
    * - Rust Domain Platform — qorix_core_wasm
+     - QDX-SYS-006
      - QDX-SWE-031, QDX-SWE-046, QDX-SWE-055, QDX-SWE-060
      - QDX-IT-003
+     - —
      - Draft
    * - Rust Domain Platform — qorix_cli
      - QDX-SWE-038, QDX-SWE-041, QDX-SWE-045, QDX-SWE-046,
@@ -1069,24 +1116,34 @@ OperationPlan acceptance and import events (QDX-SWE-052).
      - QDX-IT-006, QDX-IT-007
      - Draft
    * - ARXML Gateway — GraphQL API / SDL
+     - QDX-SYS-012
      - QDX-SWE-043
      - QDX-IT-008
+     - —
      - Draft
    * - Qorix Agent — Intent Router
+     - QDX-SYS-016
      - QDX-SWE-050, QDX-SWE-051, QDX-SWE-079
      - QDX-IT-010
+     - —
      - Draft
    * - Qorix Agent — Tool Registry
+     - QDX-SYS-016
      - QDX-SWE-050, QDX-SWE-061, QDX-SWE-077, QDX-SWE-080
+     - —
      - —
      - Draft
    * - Qorix Agent — Classic / Adaptive / BPCT MCP Tools
+     - QDX-SYS-016
      - QDX-SWE-047, QDX-SWE-078, QDX-SWE-080, QDX-SWE-089
      - QDX-IT-010, QDX-IT-015, QDX-IT-018
+     - —
      - Draft
    * - LW-BSW subsystem (schema filter + generators)
+     - QDX-SYS-002
      - QDX-SWE-081 through QDX-SWE-090
      - QDX-IT-016, QDX-IT-017, QDX-IT-018
+     - —
      - Draft
    * - BPCT validation rule engine
      - QDX-SWE-066, QDX-SWE-069, QDX-SWE-070, QDX-SWE-072,
@@ -1187,7 +1244,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-001
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-001
+   :sys_req: QDX-SYS-001
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-001 (Multi-stack workspace initialisation).
 
@@ -1195,7 +1254,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-002
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-002
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-002 (Per-stack project scaffolding).
 
@@ -1203,7 +1264,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-003
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-003
+   :sys_req: QDX-SYS-044
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-003 (Source/output directory separation).
 
@@ -1211,7 +1274,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-004
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-004
+   :sys_req: QDX-SYS-019
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-004 (Version-control-friendly YAML persistence).
 
@@ -1219,7 +1284,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-005
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-005
+   :sys_req: QDX-SYS-033
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-005 (Atomic save with integrity protection).
 
@@ -1227,7 +1294,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-006
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-006
+   :sys_req: QDX-SYS-003
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-006 (YAML editor with schema-based completion).
 
@@ -1235,7 +1304,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-007
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-007
+   :sys_req: QDX-SYS-029
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-007 (Language server protocol integration).
 
@@ -1243,7 +1314,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-008
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-008
+   :sys_req: QDX-SYS-013
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-008 (Localised atomic model mutations).
 
@@ -1251,7 +1324,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-009
    :status: Draft
    :domain: classic
+   :cr_id: —
    :implements: QDX-SWE-009
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-009 (C1 — SWC and interface designer).
 
@@ -1259,7 +1334,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-010
    :status: Draft
    :domain: classic
+   :cr_id: —
    :implements: QDX-SWE-010
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-010 (C1 — SWC runnable definition).
 
@@ -1267,7 +1344,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-011
    :status: Draft
    :domain: classic
+   :cr_id: —
    :implements: QDX-SWE-011
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-011 (C2 — Signals and ComStack designer).
 
@@ -1275,7 +1354,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-012
    :status: Draft
    :domain: classic
+   :cr_id: —
    :implements: QDX-SWE-012
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-012 (C3 — ECU and BSW designer).
 
@@ -1283,7 +1364,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-013
    :status: Draft
    :domain: classic
+   :cr_id: —
    :implements: QDX-SWE-013
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-013 (C4 — OS and scheduling designer).
 
@@ -1291,7 +1374,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-014
    :status: Draft
    :domain: classic
+   :cr_id: —
    :implements: QDX-SWE-014
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-014 (C5 — Memory and NvM designer).
 
@@ -1299,7 +1384,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-015
    :status: Draft
    :domain: classic
+   :cr_id: —
    :implements: QDX-SWE-015
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-015 (C6 — RTE and mapping designer).
 
@@ -1307,7 +1394,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-016
    :status: Draft
    :domain: classic
+   :cr_id: —
    :implements: QDX-SWE-016
+   :sys_req: QDX-SYS-007
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-016 (Unmapped element detection in C6).
 
@@ -1315,7 +1404,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-017
    :status: Draft
    :domain: adaptive
+   :cr_id: —
    :implements: QDX-SWE-017
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-017 (A1 — Application and service designer).
 
@@ -1323,7 +1414,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-018
    :status: Draft
    :domain: adaptive
+   :cr_id: —
    :implements: QDX-SWE-018
+   :sys_req: QDX-SYS-008
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-018 (A1 — Service cross-reference tracking).
 
@@ -1331,7 +1424,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-019
    :status: Draft
    :domain: adaptive
+   :cr_id: —
    :implements: QDX-SWE-019
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-019 (A2 — Communication and service instance designer).
 
@@ -1339,7 +1434,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-020
    :status: Draft
    :domain: adaptive
+   :cr_id: —
    :implements: QDX-SWE-020
+   :sys_req: QDX-SYS-007
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-020 (A2 — Service binding completeness validation).
 
@@ -1347,7 +1444,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-021
    :status: Draft
    :domain: adaptive
+   :cr_id: —
    :implements: QDX-SWE-021
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-021 (A3 — Machine design designer).
 
@@ -1355,7 +1454,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-022
    :status: Draft
    :domain: adaptive
+   :cr_id: —
    :implements: QDX-SWE-022
+   :sys_req: QDX-SYS-007
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-022 (A3 — Disabled core reference detection).
 
@@ -1363,7 +1464,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-023
    :status: Draft
    :domain: adaptive
+   :cr_id: —
    :implements: QDX-SWE-023
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-023 (A4 — Platform services designer).
 
@@ -1371,7 +1474,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-024
    :status: Draft
    :domain: adaptive
+   :cr_id: —
    :implements: QDX-SWE-024
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-024 (A5 — Execution management designer).
 
@@ -1379,7 +1484,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-025
    :status: Draft
    :domain: adaptive
+   :cr_id: —
    :implements: QDX-SWE-025
+   :sys_req: QDX-SYS-007
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-025 (A5 — Scheduling conflict detection).
 
@@ -1387,7 +1494,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-026
    :status: Draft
    :domain: adaptive
+   :cr_id: —
    :implements: QDX-SWE-026
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-026 (A6 — Deployment designer).
 
@@ -1395,7 +1504,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-027
    :status: Draft
    :domain: adaptive
+   :cr_id: —
    :implements: QDX-SWE-027
+   :sys_req: QDX-SYS-007
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-027 (A6 — Resource constraint validation).
 
@@ -1403,7 +1514,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-028
    :status: Draft
    :domain: adaptive
+   :cr_id: —
    :implements: QDX-SWE-028
+   :sys_req: QDX-SYS-020
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-028 (Adaptive cross-designer consistency check).
 
@@ -1411,7 +1524,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-029
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-029
+   :sys_req: QDX-SYS-005
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-029 (Designer-to-YAML synchronisation).
 
@@ -1419,7 +1534,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-030
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-030
+   :sys_req: QDX-SYS-005
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-030 (YAML-to-designer synchronisation).
 
@@ -1427,7 +1544,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-031
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-031
+   :sys_req: QDX-SYS-006
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-031 (In-IDE WASM fast validation).
 
@@ -1435,7 +1554,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-032
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-032
+   :sys_req: QDX-SYS-007
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-032 (Deep semantic validation via domain service).
 
@@ -1443,7 +1564,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-033
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-033
+   :sys_req: QDX-SYS-008
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-033 (Cross-file reference resolution).
 
@@ -1451,7 +1574,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-034
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-034
+   :sys_req: QDX-SYS-036
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-034 (Validation-gated publication).
 
@@ -1459,7 +1584,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-035
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-035
+   :sys_req: QDX-SYS-020
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-035 (Workspace-level consistency check).
 
@@ -1467,7 +1594,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-036
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-036
+   :sys_req: QDX-SYS-014
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-036 (Diagnostics panel presentation).
 
@@ -1475,7 +1604,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-037
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-037
+   :sys_req: QDX-SYS-042
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-037 (Usable diagnostic message quality).
 
@@ -1483,7 +1614,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-038
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-038
+   :sys_req: QDX-SYS-009
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-038 (Deterministic ARXML generation).
 
@@ -1491,7 +1624,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-039
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-039
+   :sys_req: QDX-SYS-010
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-039 (ARXML export via ARTOP GraphQL gateway).
 
@@ -1499,7 +1634,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-040
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-040
+   :sys_req: QDX-SYS-011
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-040 (ARXML import and lossy-conversion reporting).
 
@@ -1507,7 +1644,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-041
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-041
+   :sys_req: QDX-SYS-015
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-041 (Generation provenance recording).
 
@@ -1515,7 +1654,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-042
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-042
+   :sys_req: QDX-SYS-030
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-042 (External artefact compatibility status reporting).
 
@@ -1523,7 +1664,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-043
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-043
+   :sys_req: QDX-SYS-012
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-043 (GraphQL API contract for model access).
 
@@ -1531,7 +1674,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-044
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-044
+   :sys_req: QDX-SYS-018
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-044 (Search and navigation API).
 
@@ -1539,7 +1684,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-045
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-045
+   :sys_req: QDX-SYS-031
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-045 (Headless CLI for CI validation and generation).
 
@@ -1547,7 +1694,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-046
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-046
+   :sys_req: QDX-SYS-031
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-046 (Same Rust core for all build targets).
 
@@ -1555,7 +1704,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-047
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-047
+   :sys_req: QDX-SYS-016
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-047 (AI-generated OperationPlan — no direct YAML edit).
 
@@ -1563,7 +1714,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-048
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-048
+   :sys_req: QDX-SYS-017
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-048 (User acceptance gate for AI suggestions).
 
@@ -1571,7 +1724,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-049
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-049
+   :sys_req: QDX-SYS-006
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-049 (Post-acceptance WASM re-validation).
 
@@ -1579,7 +1734,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-050
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-050
+   :sys_req: QDX-SYS-016
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-050 (Intent Router — Classic vs Adaptive dispatch).
 
@@ -1587,7 +1744,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-051
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-051
+   :sys_req: QDX-SYS-037
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-051 (Configurable AI data transmission control).
 
@@ -1595,7 +1754,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-052
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-052
+   :sys_req: QDX-SYS-035
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-052 (Audit log for critical user actions).
 
@@ -1603,7 +1764,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-053
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-053
+   :sys_req: QDX-SYS-034
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-053 (Access control for privileged operations).
 
@@ -1611,7 +1774,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-054
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-054
+   :sys_req: QDX-SYS-022
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-054 (Workspace open time).
 
@@ -1619,7 +1784,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-055
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-055
+   :sys_req: QDX-SYS-023
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-055 (WASM validation latency).
 
@@ -1627,7 +1794,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-056
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-056
+   :sys_req: QDX-SYS-024
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-056 (Search response time).
 
@@ -1635,7 +1804,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-057
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-057
+   :sys_req: QDX-SYS-025
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-057 (ARXML generation completion time).
 
@@ -1643,7 +1814,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-058
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-058
+   :sys_req: QDX-SYS-026
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-058 (Non-blocking UI for long-running operations).
 
@@ -1651,7 +1824,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-059
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-059
+   :sys_req: QDX-SYS-027
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-059 (Dual IDE host support — VS Code and Theia).
 
@@ -1659,7 +1834,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-060
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-060
+   :sys_req: QDX-SYS-043
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-060 (Offline local authoring and validation).
 
@@ -1667,7 +1844,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-061
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-061
+   :sys_req: QDX-SYS-041
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-061 (Extension mechanism without core modification).
 
@@ -1675,7 +1854,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-062
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-062
+   :sys_req: QDX-SYS-040
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-062 (Backward-compatible project migration).
 
@@ -1683,7 +1864,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-063
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-063
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-063 (BPCT project structure and MCU selection (BD1)).
 
@@ -1691,7 +1874,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-064
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-064
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-064 (BPCT communication channel configuration (BD2)).
 
@@ -1699,7 +1884,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-065
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-065
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-065 (BPCT memory map and NvM block configuration (BD3)).
 
@@ -1707,7 +1894,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-066
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-066
+   :sys_req: QDX-SYS-007
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-066 (BPCT flash block size constraint validation (BD3)).
 
@@ -1715,7 +1904,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-067
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-067
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-067 (BPCT core parameters and UDS session configuration (BD4)).
 
@@ -1723,7 +1914,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-068
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-068
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-068 (BPCT timing, hardware and watchdog configuration (BD5)).
 
@@ -1731,7 +1924,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-069
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-069
+   :sys_req: QDX-SYS-007
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-069 (BPCT watchdog timeout cross-constraint validation (BD5)).
 
@@ -1739,7 +1934,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-070
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-070
+   :sys_req: QDX-SYS-008
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-070 (BPCT cross-designer timing dependency propagation).
 
@@ -1747,7 +1944,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-071
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-071
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-071 (BPCT crypto and secure boot configuration (BD6)).
 
@@ -1755,7 +1954,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-072
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-072
+   :sys_req: QDX-SYS-007
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-072 (BPCT weak cryptographic algorithm detection (BD6)).
 
@@ -1763,7 +1964,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-073
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-073
+   :sys_req: QDX-SYS-007
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-073 (BPCT key address placement validation (BD6)).
 
@@ -1771,7 +1974,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-074
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-074
+   :sys_req: QDX-SYS-020
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-074 (BPCT validation rule engine (cross-designer)).
 
@@ -1779,7 +1984,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-075
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-075
+   :sys_req: QDX-SYS-009
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-075 (BPCT C header and Makefile generation).
 
@@ -1787,7 +1994,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-076
    :status: Draft
    :domain: bootloader
+   :cr_id: —
    :implements: QDX-SWE-076
+   :sys_req: QDX-SYS-014
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-076 (BPCT output preview in BD1 designer).
 
@@ -1795,7 +2004,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-077
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-077
+   :sys_req: QDX-SYS-016
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-077 (AI-Assist availability gated by domain extension).
 
@@ -1803,7 +2014,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-078
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-078
+   :sys_req: QDX-SYS-016
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-078 (AI-Assist context injection per domain).
 
@@ -1811,7 +2024,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-079
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-079
+   :sys_req: QDX-SYS-017
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-079 (AI-Assist OperationPlan scoped to active domain).
 
@@ -1819,7 +2034,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-080
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-080
+   :sys_req: QDX-SYS-016
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-080 (AI-Assist BPCT domain tools).
 
@@ -1827,7 +2044,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-081
    :status: Draft
    :domain: lw-bsw
+   :cr_id: —
    :implements: QDX-SWE-081
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-081 (LW-BSW project creation and ECU/DEXT import).
 
@@ -1835,7 +2054,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-082
    :status: Draft
    :domain: lw-bsw
+   :cr_id: —
    :implements: QDX-SWE-082
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-082 (LW-BSW module configuration — ten BSW modules).
 
@@ -1843,7 +2064,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-083
    :status: Draft
    :domain: lw-bsw
+   :cr_id: —
    :implements: QDX-SWE-083
+   :sys_req: QDX-SYS-004
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-083 (LW-BSW CAN and optional LIN communication configuration).
 
@@ -1851,7 +2074,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-084
    :status: Draft
    :domain: lw-bsw
+   :cr_id: —
    :implements: QDX-SWE-084
+   :sys_req: QDX-SYS-007
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-084 (LW-BSW resource budget validation).
 
@@ -1859,7 +2084,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-085
    :status: Draft
    :domain: lw-bsw
+   :cr_id: —
    :implements: QDX-SWE-085
+   :sys_req: QDX-SYS-007
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-085 (LW-BSW OS scheduling map and race condition analysis).
 
@@ -1867,7 +2094,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-086
    :status: Draft
    :domain: lw-bsw
+   :cr_id: —
    :implements: QDX-SWE-086
+   :sys_req: QDX-SYS-015
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-086 (LW-BSW Config Report generation).
 
@@ -1875,7 +2104,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-087
    :status: Draft
    :domain: lw-bsw
+   :cr_id: —
    :implements: QDX-SWE-087
+   :sys_req: QDX-SYS-009
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-087 (LW-BSW module configuration ``.h`` and ``.c`` generation).
 
@@ -1883,7 +2114,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-088
    :status: Draft
    :domain: lw-bsw
+   :cr_id: —
    :implements: QDX-SWE-088
+   :sys_req: QDX-SYS-007
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-088 (LW-BSW bus-level compatibility check with Classic AUTOSAR).
 
@@ -1891,7 +2124,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-089
    :status: Draft
    :domain: lw-bsw
+   :cr_id: —
    :implements: QDX-SWE-089
+   :sys_req: QDX-SYS-016
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-089 (LW-BSW AI-Assist Config Insight).
 
@@ -1899,7 +2134,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-090
    :status: Draft
    :domain: lw-bsw
+   :cr_id: —
    :implements: QDX-SWE-090
+   :sys_req: QDX-SYS-006
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-090 (LW-BSW ICC-2 conformance constraint enforcement).
 
@@ -1907,7 +2144,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-091
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-091
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-091 (Project creation wizard — welcome and stack selection).
 
@@ -1915,7 +2154,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-092
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-092
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-092 (Classic AUTOSAR — platform version selection step).
 
@@ -1923,7 +2164,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-093
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-093
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-093 (Classic AUTOSAR — template selection step).
 
@@ -1931,7 +2174,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-094
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-094
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-094 (Classic AUTOSAR — project configuration step).
 
@@ -1939,7 +2184,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-095
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-095
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-095 (Adaptive AUTOSAR — template selection step).
 
@@ -1947,7 +2194,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-096
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-096
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-096 (Adaptive AUTOSAR — project configuration step).
 
@@ -1955,7 +2204,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-097
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-097
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-097 (Bootloader (BPCT) — template selection step).
 
@@ -1963,7 +2214,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-098
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-098
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-098 (Bootloader (BPCT) — MCU and project configuration step).
 
@@ -1971,7 +2224,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-099
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-099
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-099 (LW-BSW — project configuration step).
 
@@ -1979,7 +2234,9 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-100
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-100
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-100 (Project creation — review and confirmation step).
 
@@ -1987,6 +2244,8 @@ All changes require a PR with minimum two approvals from CODEOWNERS.*
    :id: QDX-SWA-SP-101
    :status: Draft
    :domain: shared
+   :cr_id: —
    :implements: QDX-SWE-101
+   :sys_req: QDX-SYS-002
 
    Defines the SWE.2 architectural structures, interfaces, and behavioral constraints that realize QDX-SWE-101 (Project creation — step navigation and per-stack sequences).
